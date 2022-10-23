@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.3015625" />
+        <entry key="app/src/main/res/drawable/arrow_right.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/az_flag.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/bottom_nav_icon_color_selector.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable/button_bacground.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/editext_message_background.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/flag_background.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_back_arrow.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/ic_car_key.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/ic_chats.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/ic_comment.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_comments.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_eye_not.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_friends.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable/ic_gallery.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/ic_market.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable/ic_pause.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/ic_play.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_record.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_star.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_star_active.xml" value="0.151" />
+        <entry key="app/src/main/res/drawable/logo_icon.xml" value="0.24408654785156253" />
+        <entry key="app/src/main/res/drawable/material_input_background.xml" value="0.26543585205078124" />
+        <entry key="app/src/main/res/drawable/message_round.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/message_round_sender.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/plate_background.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/scrubber_control_normal_holo.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/search_background.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/search_icon.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/thumb.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/thumb_image.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/top_border_background.xml" value="0.228" />
+        <entry key="app/src/main/res/drawable/user_list_background.xml" value="1.2139448852539063" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3744791666666667" />
+        <entry key="app/src/main/res/layout/activity_messaging.xml" value="0.2899198953774923" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.20377960205078127" />
+        <entry key="app/src/main/res/layout/activity_unregister.xml" value="0.19585456295289852" />
+        <entry key="app/src/main/res/layout/chat_list.xml" value="0.4108846028645834" />
+        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/fragment_add_friend.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.2034942626953125" />
+        <entry key="app/src/main/res/layout/fragment_container_nav.xml" value="0.3406451612903226" />
+        <entry key="app/src/main/res/layout/fragment_friends.xml" value="0.19860432942708334" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.34644877115885414" />
+        <entry key="app/src/main/res/layout/fragment_market.xml" value="0.3941680908203125" />
+        <entry key="app/src/main/res/layout/fragment_messaging.xml" value="0.38430887858072926" />
+        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.29635416666666664" />
+        <entry key="app/src/main/res/layout/list_message.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/loading_layout.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/market_list.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/material_input_layout.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/messages_view.xml" value="0.3533045450846353" />
+        <entry key="app/src/main/res/layout/photo_select_bottom_sheet_content.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/plate_input_layout.xml" value="0.4014667455700861" />
+        <entry key="app/src/main/res/layout/plate_layout.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/post_layout.xml" value="0.3895476189212523" />
+        <entry key="app/src/main/res/layout/record_view.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/search_input.xml" value="0.275" />
+        <entry key="app/src/main/res/layout/user_list.xml" value="0.5096623738606771" />
+        <entry key="app/src/main/res/menu/bottom_nav_items.xml" value="0.4036458333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="Need_For_Speak.app" />
+      </set>
+    </option>
+  </component>
+</project>

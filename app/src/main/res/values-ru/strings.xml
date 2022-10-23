@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="click_me">Maya klik</string>
+    <string name="friends">Friends</string>
+    <string name="chats">Chats</string>
+    <string name="market">Market</string>
+    <string name="account">Account</string>
+    <string name="search">Search</string>
+</resources>

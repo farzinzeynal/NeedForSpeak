@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.register.AddFriendFragment"
+    android:background="@color/background_two_color">
+    <include android:id="@+id/plateInclude" layout="@layout/plate_input_layout" />
+    <Button
+        android:id="@+id/addFriendBtn"
+        android:text="Find"
+        android:alpha="0.4"
+        android:enabled="false"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_background"
+        android:layout_width="210dp"
+        android:layout_height="38dp"/>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">Need For Speak</string>
+    <string name="click_me">Click me</string>
+    <string name="friends">Friends</string>
+    <string name="chats">Chats</string>
+    <string name="market">Market</string>
+    <string name="account">Account</string>
+    <string name="search">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="54dp"
+    android:height="54dp"
+    android:viewportWidth="54"
+    android:viewportHeight="54">
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 27 0 C 41.9116882454 0 54 12.0883117546 54 27 C 54 41.9116882454 41.9116882454 54 27 54 C 12.0883117546 54 0 41.9116882454 0 27 C 0 12.0883117546 12.0883117546 0 27 0 Z" />
+    <group>
+        <path
+            android:strokeColor="#ADADA6"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeMiterLimit="10"
+            android:strokeLineCap="round"
+            android:pathData="M 29.99 48.55 L 24.01 46.97 L 24.01 30.92 L 29.99 30.92 Z" />
+        <path
+            android:strokeColor="#ADADA6"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeMiterLimit="10"
+            android:strokeLineCap="round"
+            android:pathData="M 26.23 32.38 L 27.77 36.01 L 26.23 39.69 L 27.77 43.59 L 26.23 47.08 " />
+        <path
+            android:strokeColor="#ADADA6"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeMiterLimit="10"
+            android:strokeLineCap="round"
+            android:pathData="M29.9,30.92H24.1c-1.92,0-3.54-1.43-3.78-3.34l-1.4-7.98c-0.28-2.27,1.49-4.28,3.78-4.28h8.62 c2.29,0,4.07,2.01,3.78,4.28l-1.4,7.98C33.45,29.49,31.83,30.92,29.9,30.92z" />
+        <path
+            android:strokeColor="#ADADA6"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeMiterLimit="10"
+            android:strokeLineCap="round"
+            android:pathData="M 24.57 19.73 L 29.43 19.73" />
+        <path
+            android:strokeColor="#ADADA6"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeMiterLimit="10"
+            android:strokeLineCap="round"
+            android:pathData="M27,19.73c-2.92,0-5.28-2.36-5.28-5.28S24.08,9.17,27,9.17s5.28,2.36,5.28,5.28" />
+        <path
+            android:strokeColor="#ADADA6"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeMiterLimit="10"
+            android:strokeLineCap="round"
+            android:pathData="M 27 -3.6 L 27 11.67" />
+    </group>
+</vector>

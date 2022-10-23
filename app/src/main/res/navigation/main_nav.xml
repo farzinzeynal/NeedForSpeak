@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/friendsFragment">
+
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="az.needforspeak.ui.register.FriendsFragment"
+        android:label="@string/friends"
+        tools:layout="@layout/fragment_friends" />
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="az.needforspeak.ui.register.ChatsFragment"
+        android:label="@string/chats"
+        tools:layout="@layout/fragment_chats" />
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="az.needforspeak.ui.register.MarketFragment"
+        android:label="@string/market"
+        tools:layout="@layout/fragment_market" >
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="az.needforspeak.ui.register.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/addFriendFragment"
+        android:name="az.needforspeak.ui.register.AddFriendFragment"
+        android:label="Add friend"
+        tools:layout="@layout/fragment_add_friend" />
+    <activity
+        android:id="@+id/messagingActivity"
+        android:name="az.needforspeak.ui.register.MessagingActivity"
+        android:label="Messaging"
+        tools:layout="@layout/fragment_messaging" >
+        <argument
+            android:name="plateNumber"
+            app:argType="string"
+            android:defaultValue=""/>
+    </activity>
+    <fragment
+        android:id="@+id/marketFragmentIn"
+        android:name="az.needforspeak.ui.register.MarketFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_market" >
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="in"/>
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="az.needforspeak.ui.register.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" />
+</navigation>
