@@ -12,6 +12,7 @@ import az.needforspeak.base.BaseFragment
 import az.needforspeak.component.adapter.ChatAdapter
 import az.needforspeak.databinding.FragmentChatsBinding
 import az.needforspeak.model.local.ChatModel
+import az.needforspeak.view_model.ChatsViewModel
 import az.needforspeak.utils.getCurrentDateTime
 import az.needforspeak.utils.getNavOptions
 import az.needforspeak.utils.toString

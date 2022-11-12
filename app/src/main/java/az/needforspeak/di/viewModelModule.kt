@@ -1,9 +1,9 @@
 package az.needforspeak.di
 
-import az.needforspeak.ui.MainViewModel
-import az.needforspeak.ui.SplashViewModel
-import az.needforspeak.ui.register.ChatsViewModel
-import az.needforspeak.ui.register.MessagingViewModel
+import az.needforspeak.view_model.MainViewModel
+import az.needforspeak.view_model.SplashViewModel
+import az.needforspeak.view_model.ChatsViewModel
+import az.needforspeak.view_model.MessagingViewModel
 import az.needforspeak.ui.unregister.LoginViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

@@ -58,7 +58,13 @@ class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFrie
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) { }
             override fun afterTextChanged(s: Editable) { }
         })
+
+
+        views.addFriendBtn.setOnClickListener {
+
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

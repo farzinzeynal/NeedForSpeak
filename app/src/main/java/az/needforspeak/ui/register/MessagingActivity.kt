@@ -35,6 +35,7 @@ import az.needforspeak.model.local.MESSAGE_SENDER
 import az.needforspeak.model.local.MESSAGE_TYPE
 import az.needforspeak.model.local.Message
 import az.needforspeak.model.local.MessageModel
+import az.needforspeak.view_model.MessagingViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.*
 import java.util.*

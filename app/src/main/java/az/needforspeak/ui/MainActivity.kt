@@ -1,29 +1,22 @@
 package az.needforspeak.ui
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.HandlerThread
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivityMainBinding
-import az.needforspeak.databinding.ActivitySplashBinding
-import az.needforspeak.ui.register.ChatsViewModel
 import az.needforspeak.ui.register.ContainerNavFragment
 import az.needforspeak.utils.*
+import az.needforspeak.view_model.MainViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -188,6 +181,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             when(bottomIndex) {
                 0 -> Navigation.findNavController(listFragment[0].views.containerContent).navigate(R.id.addFriendFragment, null, getNavOptions())
             }
+        }
+
+        views.settingsIcon.setOnClickListener{
+            Navigation.findNavController(listFragment[3].views.containerContent).navigate(R.id.userSettingsFragment, null, getNavOptions())
         }
 
         Handler(Looper.getMainLooper()).post {

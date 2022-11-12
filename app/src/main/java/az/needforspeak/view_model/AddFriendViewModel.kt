@@ -1,4 +1,4 @@
-package az.needforspeak.ui.register
+package az.needforspeak.view_model
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

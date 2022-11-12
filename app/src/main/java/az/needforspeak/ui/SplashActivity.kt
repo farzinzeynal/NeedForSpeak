@@ -3,16 +3,14 @@ package az.needforspeak.ui
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.webkit.WebView
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivitySplashBinding
-import az.needforspeak.ui.unregister.LoginViewModel
+import az.needforspeak.view_model.SplashViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
-import org.koin.java.KoinJavaComponent.inject
 
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {

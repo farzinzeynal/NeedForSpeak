@@ -64,4 +64,28 @@
         android:name="az.needforspeak.ui.register.PostFragment"
         android:label="fragment_post"
         tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/userSettingsFragment"
+        android:name="az.needforspeak.ui.register.settings.UserSettingsFragment"
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/changeYourCarFragment"
+        android:name="az.needforspeak.ui.register.settings.ChangeYourCarFragment"
+        android:label="Change Your Car" />
+    <fragment
+        android:id="@+id/languagesFragment"
+        android:name="az.needforspeak.ui.register.settings.LanguagesFragment"
+        android:label="Languages" />
+    <fragment
+        android:id="@+id/notificationsAndAlertsFragment"
+        android:name="az.needforspeak.ui.register.settings.NotificationsAndAlertsFragment"
+        android:label="Notifications And Alerts" />
+    <fragment
+        android:id="@+id/savedMessagesFragment"
+        android:name="az.needforspeak.ui.register.settings.SavedMessagesFragment"
+        android:label="Saved Messages" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="az.needforspeak.ui.register.settings.SupportFragment"
+        android:label="Support" />
 </navigation>
