@@ -4,7 +4,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
 import androidx.core.widget.doOnTextChanged
@@ -14,6 +13,7 @@ import az.needforspeak.base.BaseFragment
 import az.needforspeak.databinding.FragmentLoginBinding
 import az.needforspeak.ui.MainActivity
 import az.needforspeak.utils.MaskFormatter
+import az.needforspeak.view_model.LoginViewModel
 import com.google.gson.Gson
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel

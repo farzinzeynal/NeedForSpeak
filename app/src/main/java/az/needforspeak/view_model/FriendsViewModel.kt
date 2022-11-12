@@ -4,13 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import az.needforspeak.base.BaseActivity
-import az.needforspeak.repository.AuthRepositry
 import az.needforspeak.repository.MainRepository
 import az.needforspeak.utils.MyAccount
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AddFriendViewModel(private val mainRepository: MainRepository): ViewModel() {
+class FriendsViewModel(private val mainRepository: MainRepository): ViewModel() {
+
     val showError = MutableLiveData<Boolean>()
     val successLogin = MutableLiveData<Boolean>()
 
@@ -19,6 +19,7 @@ class AddFriendViewModel(private val mainRepository: MainRepository): ViewModel(
         BaseActivity.loadingDown()
         viewModelScope.launch(Dispatchers.IO) {
             mainRepository.searchUser(userName) { result ->
+                result
                 searchResult.postValue(result)
             }
             BaseActivity.loadingDown()

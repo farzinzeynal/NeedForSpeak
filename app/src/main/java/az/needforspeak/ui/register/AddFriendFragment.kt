@@ -3,29 +3,22 @@ package az.needforspeak.ui.register
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
-import androidx.core.os.bundleOf
 import androidx.core.widget.doOnTextChanged
-import androidx.navigation.Navigation
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import az.needforspeak.R
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.component.adapter.MarketAdapter
 import az.needforspeak.databinding.FragmentAddFriendBinding
-import az.needforspeak.model.local.MarketModel
 import az.needforspeak.utils.MaskFormatter
-import az.needforspeak.utils.getNavOptions
 import az.needforspeak.utils.hideKeyboard
+import az.needforspeak.view_model.FriendsViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFriendBinding::inflate) {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: MarketAdapter
-
+    private val viewModel: FriendsViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -61,7 +54,8 @@ class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFrie
 
 
         views.addFriendBtn.setOnClickListener {
-
+            val userDatas = viewModel.searchUser(views.plateInclude.plateEditText.text.toString())
+            userDatas
         }
     }
 

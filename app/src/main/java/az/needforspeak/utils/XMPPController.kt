@@ -182,6 +182,7 @@ object XMPPController {
         return suspendCancellableCoroutine { continuation ->
             SessionManager.getCurrentUserJID()
             val userData = SessionManager.getRegisteredUser()
+            userData
             continuation.resume(connect(userData?.first ?: "", userData?.second ?: ""))
         }
     }
@@ -262,13 +263,7 @@ object XMPPController {
                                 val firstName = reportedData.getValues("first").getIfExists(0)
                                 val lastName = reportedData.getValues("last").getIfExists(0)
                                 val userJid = reportedData.getValues("jid").getIfExists(0)
-                                userList.add(
-                                    MyAccount(
-                                        certNumber = userJid,
-                                        firstname = firstName,
-                                        lastname = lastName
-                                    )
-                                )
+                                userList.add(MyAccount(certNumber = userJid, firstname = firstName, lastname = lastName))
                             }
                         }
                     } else null

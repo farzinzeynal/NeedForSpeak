@@ -26,13 +26,12 @@ class UserSettingsFragment: BaseFragment<FragmentUserSettingsBinding>(FragmentUs
         linearLayoutManager = LinearLayoutManager(requireContext())
 
         val mSettingsList = mutableListOf<SettingsModel>()
-        mSettingsList.add(SettingsModel(1,"Saved messages and posts", R.drawable.ic_car_key,R.id.savedMessagesFragment))
-        mSettingsList.add(SettingsModel(2,"Change your car", R.drawable.ic_car_key,R.id.changeYourCarFragment))
-        mSettingsList.add(SettingsModel(3,"Notifications and alerts", R.drawable.ic_car_key,R.id.notificationsAndAlertsFragment))
-        mSettingsList.add(SettingsModel(4,"Language", R.drawable.ic_car_key,R.id.languagesFragment))
-        mSettingsList.add(SettingsModel(5,"Support", R.drawable.ic_car_key,R.id.supportFragment))
-        mSettingsList.add(SettingsModel(6,"Log out", R.drawable.ic_car_key,null))
-        mSettingsList.add(SettingsModel(7,"Delete your account", R.drawable.ic_car_key,null))
+        mSettingsList.add(SettingsModel(1,"Saved messages and posts", R.drawable.ic_settings_saved_messages,R.id.savedMessagesFragment))
+        mSettingsList.add(SettingsModel(2,"Change your car", R.drawable.ic_settings_change_auto,R.id.changeYourCarFragment))
+        mSettingsList.add(SettingsModel(3,"Notifications and alerts", R.drawable.ic_settings_notification,R.id.notificationsAndAlertsFragment))
+        mSettingsList.add(SettingsModel(4,"Language", R.drawable.ic_settings_language,R.id.languagesFragment))
+        mSettingsList.add(SettingsModel(5,"Support", R.drawable.ic_settings_support,R.id.supportFragment))
+        mSettingsList.add(SettingsModel(6,"Delete your account", R.drawable.ic_settings_delete_account,null))
 
 
         adapter = SettingsListAdapter(requireContext()){
@@ -44,7 +43,6 @@ class UserSettingsFragment: BaseFragment<FragmentUserSettingsBinding>(FragmentUs
 
         views.settingsList.layoutManager = linearLayoutManager
         views.settingsList.adapter = adapter
-
 
     }
 }

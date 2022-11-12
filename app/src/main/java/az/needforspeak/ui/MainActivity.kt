@@ -187,9 +187,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             Navigation.findNavController(listFragment[3].views.containerContent).navigate(R.id.userSettingsFragment, null, getNavOptions())
         }
 
-        Handler(Looper.getMainLooper()).post {
+       /* Handler(Looper.getMainLooper()).post {
             views.bottomNav.selectedItemId = R.id.chatsNav
-        }
+        }*/
     }
 
 

@@ -20,6 +20,7 @@ class MainRepository(private val service: MainService) : BaseApiResponse() {
 
     fun searchUser(userName: String, calback: (ArrayList<MyAccount>?) -> Unit) {
         XMPPController.checkIfUserExists(userName) {
+            it
             calback.invoke(it)
         }
     }
