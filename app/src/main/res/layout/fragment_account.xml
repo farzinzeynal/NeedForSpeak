@@ -39,7 +39,9 @@
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
                     android:textColor="@color/black"
+                    android:editable="false"
                     android:maxLines="1"
+                    android:text="Ferzin"
                     android:background="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -68,6 +70,8 @@
                     android:textColor="@color/black"
                     android:maxLines="1"
                     android:background="@null"
+                    android:text="Android"
+                    android:editable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -94,8 +98,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:textColor="@color/black"
                     android:maxLines="1"
+                    android:editable="false"
                     android:digits="123456789+"
                     android:inputType="phone"
+                    android:text="0503288113"
                     android:background="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -124,12 +130,14 @@
                 app:hintTextColor="@color/hint_message_color"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:editable="false"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
                     android:textColor="@color/black"
                     android:maxLines="1"
                     android:digits="123456789+"
                     android:inputType="phone"
+                    android:editable="false"
                     android:background="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -160,6 +168,7 @@
                     android:digits="123456789+"
                     android:inputType="phone"
                     android:background="@null"
+                    android:editable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -186,6 +195,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:textColor="@color/black"
                     android:maxLines="1"
+                    android:editable="false"
                     android:background="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -212,6 +222,7 @@
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
                     android:textColor="@color/black"
+                    android:editable="false"
                     android:maxLines="1"
                     android:background="@null"
                     android:layout_width="match_parent"

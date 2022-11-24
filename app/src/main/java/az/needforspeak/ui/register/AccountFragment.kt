@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import az.needforspeak.R
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.databinding.FragmentAccountBinding
+import az.needforspeak.model.local.UserModel
 
 class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,8 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {

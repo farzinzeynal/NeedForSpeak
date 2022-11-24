@@ -116,7 +116,8 @@
                             android:paddingTop="8dp"
                             android:paddingEnd="4dp"
                             android:paddingRight="4dp"
-                            android:paddingBottom="8dp" />
+                            android:paddingBottom="8dp"
+                            android:textColor="@color/black" />
 
                         <ImageView
                             android:id="@+id/imageViewAttachment"

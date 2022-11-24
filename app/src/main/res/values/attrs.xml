@@ -4,4 +4,10 @@
         <attr name="mask" format="string"/>
         <attr name="placeholder" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="LanguagesView">
+        <attr name="languagesImage" format="reference" />
+        <attr name="languagesTitle" format="string" />
+        <attr name="languagesRightIcon" format="reference" />
+    </declare-styleable>
 </resources>

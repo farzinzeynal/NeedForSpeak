@@ -1,6 +1,7 @@
 package az.needforspeak.db
 
 import androidx.room.Dao
+import androidx.room.Entity
 import androidx.room.Insert
 import androidx.room.Query
 import az.needforspeak.model.local.ChatModel
