@@ -1,10 +1,10 @@
 package az.needforspeak.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +15,7 @@ import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivityMainBinding
 import az.needforspeak.ui.register.ContainerNavFragment
+import az.needforspeak.ui.register.post.AddPostActivity
 import az.needforspeak.utils.*
 import az.needforspeak.view_model.MainViewModel
 import org.koin.android.ext.android.inject
@@ -22,6 +23,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    private var subCatId: String =""
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
     val sharedPreferences by inject<SharedPreferences> { parametersOf("secure") }
     private val mainViewModel: MainViewModel by viewModel()
@@ -180,6 +182,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         views.addIcon.setOnClickListener {
             when(bottomIndex) {
                 0 -> Navigation.findNavController(listFragment[0].views.containerContent).navigate(R.id.addFriendFragment, null, getNavOptions())
+                2 -> {
+                    startActivity(Intent(this, AddPostActivity::class.java).also {
+                        it.putExtra(AddPostActivity.SELECTED_ROOM_JID, subCatId)
+                    })
+                }
             }
         }
 

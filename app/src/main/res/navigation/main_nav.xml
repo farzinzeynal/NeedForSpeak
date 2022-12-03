@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/postFragment"
-        android:name="az.needforspeak.ui.register.PostFragment"
+        android:name="az.needforspeak.ui.register.post.PostFragment"
         android:label="fragment_post"
         tools:layout="@layout/fragment_post" />
     <fragment

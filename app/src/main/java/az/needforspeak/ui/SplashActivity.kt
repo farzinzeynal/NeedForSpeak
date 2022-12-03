@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.webkit.WebView
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivitySplashBinding
+import az.needforspeak.ui.unregister.UnregisterActivity
 import az.needforspeak.view_model.SplashViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel

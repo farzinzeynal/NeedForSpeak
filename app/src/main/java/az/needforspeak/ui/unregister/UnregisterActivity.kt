@@ -1,4 +1,4 @@
-package az.needforspeak.ui
+package az.needforspeak.ui.unregister
 
 
 import android.os.Bundle

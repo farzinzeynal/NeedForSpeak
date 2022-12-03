@@ -1,14 +1,10 @@
 package az.needforspeak.ui.register
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import az.needforspeak.R
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.databinding.FragmentAccountBinding
-import az.needforspeak.model.local.UserModel
 
 class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {

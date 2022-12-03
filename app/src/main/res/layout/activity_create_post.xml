@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_two_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/closeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close_dialog" />
+
+    <TextView
+        android:id="@+id/addPostText"
+        style="@style/greenTextBig"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Share a post"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/closeIcon"
+        app:layout_constraintEnd_toStartOf="@+id/sendPostButton"
+        app:layout_constraintStart_toEndOf="@+id/closeIcon"
+        app:layout_constraintTop_toTopOf="@+id/closeIcon" />
+
+    <Button
+        android:id="@+id/sendPostButton"
+        style="@style/round_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/roundy_button_green"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="@+id/closeIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/closeIcon" />
+
+
+
+    <az.needforspeak.component.RoundedImageView
+        android:id="@+id/userImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closeIcon"
+        app:srcCompat="@drawable/ic_person_full_green"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/userName"
+        style="@style/textview_18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="You"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/userImage"
+        app:layout_constraintStart_toEndOf="@+id/userImage"
+        app:layout_constraintTop_toTopOf="@+id/userImage" />
+
+    <EditText
+        android:id="@+id/postSubject"
+        style="@style/bordered_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:hint="Subject"
+        android:textColorHint="#717171"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/postBody"
+        app:layout_constraintStart_toStartOf="@+id/userImage"
+        app:layout_constraintTop_toBottomOf="@+id/userImage" />
+
+    <EditText
+        android:id="@+id/postBody"
+        style="@style/bordered_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="top"
+        android:textColor="@color/black"
+        android:hint="Send post"
+        android:textColorHint="#777777"
+        android:inputType="textMultiLine|text"
+        android:minLines="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userImage"
+        app:layout_constraintTop_toBottomOf="@+id/postSubject" />
+
+
+    <LinearLayout
+        android:id="@+id/startCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/userImage"
+        app:layout_constraintTop_toBottomOf="@+id/postBody">
+
+        <TextView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/icomoon"
+            android:textColor="@color/black"
+            android:text="\uE90F"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/cameraText"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Camrea" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/startGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/userImage"
+        app:layout_constraintTop_toBottomOf="@+id/startCamera">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/icomoon"
+            android:textColor="@color/black"
+            android:text="\uE90D"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"
+            android:text="Photo" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

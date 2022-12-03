@@ -1,4 +1,4 @@
-package az.needforspeak.ui.register
+package az.needforspeak.ui.register.post
 
 import android.os.Bundle
 import android.view.View

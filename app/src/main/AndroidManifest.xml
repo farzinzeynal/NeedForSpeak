@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NeedForSpeak">
         <activity
-            android:name=".ui.UnregisterActivity"
+            android:name=".ui.unregister.UnregisterActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar" />
@@ -31,6 +31,12 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar" />
+        <activity
+            android:name="az.needforspeak.ui.register.post.AddPostActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar" />
+
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
