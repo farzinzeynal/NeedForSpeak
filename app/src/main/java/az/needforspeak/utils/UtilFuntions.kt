@@ -15,4 +15,8 @@ object UtilFuntions {
         return (px / (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT))
     }
 
+    fun getCurrentTimeStamp(): Long {
+        return System.currentTimeMillis()
+    }
+
 }

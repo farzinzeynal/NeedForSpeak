@@ -38,7 +38,6 @@ class FriendsFragment : BaseFragment<FragmentFriendsBinding>(FragmentFriendsBind
         uList.add(UserModel(plateNumber =  "10-BB-223", name = "Test", surname = "Tester", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
         uList.add(UserModel(plateNumber =  "10-AA-999", name = "asdad", surname = "asdad", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
         uList.add(UserModel(plateNumber =  "10-BB-555", name = "sad", surname = "asd", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
-        uList.add(UserModel(plateNumber =  "10-CC-444", name = "Test", surname = "Tester", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
         adapter = UserAdapter(requireContext()) {
             findNavController().navigate(R.id.accountFragment, null, getNavOptions())
         }

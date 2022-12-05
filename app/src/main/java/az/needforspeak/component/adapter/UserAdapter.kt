@@ -60,7 +60,7 @@ class UserAdapter(context: Context, onClick: (user: UserModel) -> Unit) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.photo_profile.load(dataSetFilter[position].photo)
+        viewHolder.photo_profile.setImageResource(R.drawable.ic_profile)
         viewHolder.plate_number.text = dataSetFilter[position].plateNumber
         viewHolder.fullname.text = dataSetFilter[position].name + " " + dataSetFilter[position].surname
 

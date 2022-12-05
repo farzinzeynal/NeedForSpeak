@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_two_color"
@@ -45,7 +46,7 @@
 
 
 
-    <az.needforspeak.component.RoundedImageView
+    <ImageView
         android:id="@+id/userImage"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -55,7 +56,6 @@
         app:layout_constraintTop_toBottomOf="@+id/closeIcon"
         app:srcCompat="@drawable/ic_person_full_green"
         android:scaleType="centerCrop"/>
-
     <TextView
         android:id="@+id/userName"
         style="@style/textview_18sp"
@@ -100,6 +100,17 @@
         app:layout_constraintStart_toStartOf="@+id/userImage"
         app:layout_constraintTop_toBottomOf="@+id/postSubject" />
 
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="270dp"
+        android:layout_height="238dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/background_two_color"
+        android:paddingBottom="50dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postBody" />
 
     <LinearLayout
         android:id="@+id/startCamera"
@@ -109,7 +120,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/userImage"
-        app:layout_constraintTop_toBottomOf="@+id/postBody">
+        app:layout_constraintTop_toBottomOf="@+id/postImage">
 
         <TextView
             android:id="@+id/imageView6"
@@ -133,7 +144,7 @@
         android:id="@+id/startGallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/userImage"

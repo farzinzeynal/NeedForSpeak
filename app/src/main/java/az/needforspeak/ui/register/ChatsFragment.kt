@@ -46,7 +46,6 @@ class ChatsFragment : BaseFragment<FragmentChatsBinding>(FragmentChatsBinding::i
         uList.add(ChatModel(id= 1, plateNumber =  "10-BB-223", name = "Test", surname = "Tester", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", status = "", career = "", education = null, interests = null, message = "Bla blaksd je", date = "03:99"))
         uList.add(ChatModel(id= 2, plateNumber =  "10-AA-999", name = "asdad", surname = "asdad", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", status = "", career = "", education = null, interests = null, message = "Ljsd msmd",  date = "09:00"))
         uList.add(ChatModel(id= 3, plateNumber =  "10-BB-555", name = "sad", surname = "asd", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", status = "", career = "", education = null, interests = null, message = "testlsld", date = "11:40"))
-        uList.add(ChatModel(id= 4, plateNumber =  "10-CC-444", name = "Test", surname = "Tester", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", status = "", career = "", education = null, interests = null, message =  "vqhwer",date = "12:20"))
 
         adapter = ChatAdapter(requireContext()) {
             findNavController().navigate(R.id.messagingActivity, bundleOf("plateNumber" to it.plateNumber), getNavOptions())

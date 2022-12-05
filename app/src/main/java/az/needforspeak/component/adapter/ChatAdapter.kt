@@ -50,7 +50,7 @@ class ChatAdapter(context: Context, onClick: (chat: ChatModel) -> Unit) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.photo_profile.load(dataSetFilter[position].photo)
+        viewHolder.photo_profile.setImageResource(R.drawable.ic_profile)
         viewHolder.plate_number.text = dataSetFilter[position].plateNumber
         viewHolder.message.text = dataSetFilter[position].message
         viewHolder.itemView.setOnClickListener {

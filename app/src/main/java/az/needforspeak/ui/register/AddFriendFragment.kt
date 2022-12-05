@@ -1,18 +1,23 @@
 package az.needforspeak.ui.register
 
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import az.needforspeak.R
+import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.component.adapter.MarketAdapter
 import az.needforspeak.databinding.FragmentAddFriendBinding
+import az.needforspeak.utils.Extentions.showToast
 import az.needforspeak.utils.MaskFormatter
 import az.needforspeak.utils.hideKeyboard
 import az.needforspeak.view_model.FriendsViewModel
+import kotlinx.android.synthetic.main.activity_create_post.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFriendBinding::inflate) {
@@ -55,7 +60,27 @@ class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFrie
 
         views.addFriendBtn.setOnClickListener {
             val userDatas = viewModel.searchUser(views.plateInclude.plateEditText.text.toString())
-            userDatas
+
+            BaseActivity.loadingUp()
+            Handler().postDelayed({
+                BaseActivity.loadingDown()
+                views.findUserLayout.visibility = View.GONE
+                views.sendRequestLayout.visibility = View.VISIBLE
+                views.plateLayout.plateNum.text = views.plateInclude.plateEditText.text.toString()
+            },3000)
+        }
+
+        views.btnRetry.setOnClickListener {
+            views.findUserLayout.visibility = View.VISIBLE
+            views.sendRequestLayout.visibility = View.GONE
+            views.plateInclude.plateEditText.text.clear()
+        }
+
+        views.btnSendRequest.setOnClickListener {
+            Toast.makeText(requireContext(), "Friend request sent",Toast.LENGTH_LONG).show()
+            views.findUserLayout.visibility = View.VISIBLE
+            views.sendRequestLayout.visibility = View.GONE
+            views.plateInclude.plateEditText.text.clear()
         }
     }
 
