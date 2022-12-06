@@ -46,7 +46,7 @@ class SettingsListAdapter(context: Context, onClick: (SettingsModel) -> Unit) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.setting_item_icon.setImageResource(dataSet[position].icon)
+        dataSet[position].icon?.let { viewHolder.setting_item_icon.setImageResource(it) }
         viewHolder.setting_item_title.text = dataSet[position].title
 
         viewHolder.itemView.setOnClickListener {

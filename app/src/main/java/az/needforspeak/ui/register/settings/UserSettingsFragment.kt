@@ -1,5 +1,7 @@
 package az.needforspeak.ui.register.settings
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
@@ -13,12 +15,17 @@ import az.needforspeak.component.adapter.MarketAdapter
 import az.needforspeak.component.adapter.SettingsListAdapter
 import az.needforspeak.databinding.FragmentUserSettingsBinding
 import az.needforspeak.model.local.SettingsModel
+import az.needforspeak.ui.MainActivity
+import az.needforspeak.ui.unregister.UnregisterActivity
 import az.needforspeak.utils.getNavOptions
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 class UserSettingsFragment: BaseFragment<FragmentUserSettingsBinding>(FragmentUserSettingsBinding::inflate) {
 
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: SettingsListAdapter
+    val sharedPreferences by inject<SharedPreferences> { parametersOf("secure") }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,11 +38,18 @@ class UserSettingsFragment: BaseFragment<FragmentUserSettingsBinding>(FragmentUs
         mSettingsList.add(SettingsModel(3,"Notifications and alerts", R.drawable.ic_settings_notification,R.id.notificationsAndAlertsFragment))
         mSettingsList.add(SettingsModel(4,"Language", R.drawable.ic_settings_language,R.id.languagesFragment))
         mSettingsList.add(SettingsModel(5,"Support", R.drawable.ic_settings_support,R.id.supportFragment))
-        mSettingsList.add(SettingsModel(6,"Delete your account", R.drawable.ic_settings_delete_account,null))
+        mSettingsList.add(SettingsModel(6,"Log out", null,null))
+        mSettingsList.add(SettingsModel(7,"Delete your account", R.drawable.ic_settings_delete_account,null))
 
 
         adapter = SettingsListAdapter(requireContext()){
             it.destionationFragment?.let { it1 -> findNavController().navigate(it1, null, getNavOptions()) }
+                ?: run{
+                    when(it.id){
+                        6 -> logoutFromAcc()
+                        7 -> deleteProfile()
+                    }
+                }
         }
 
         adapter.addData(mSettingsList)
@@ -44,5 +58,17 @@ class UserSettingsFragment: BaseFragment<FragmentUserSettingsBinding>(FragmentUs
         views.settingsList.layoutManager = linearLayoutManager
         views.settingsList.adapter = adapter
 
+    }
+
+    private fun deleteProfile() {
+
+    }
+
+    private fun logoutFromAcc() {
+        sharedPreferences.edit().putBoolean("isLogin", false).apply()
+        sharedPreferences.edit().putString("username", "").apply()
+        sharedPreferences.edit().putString("password", "").apply()
+        requireActivity().startActivity(Intent(requireActivity(), UnregisterActivity::class.java))
+        requireActivity().finish()
     }
 }
