@@ -22,6 +22,7 @@
         android:layout_width="219dp"
         android:layout_height="140dp"
         android:layout_marginTop="20dp"
+        android:orientation="vertical"
         android:background="@drawable/roundy_edittext_background"
         app:layout_constraintEnd_toEndOf="@+id/plate_input"
         app:layout_constraintStart_toStartOf="@+id/plate_input"
@@ -30,8 +31,19 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
+            android:layout_weight="7"
+            android:textColor="#6A6A6A"
+            android:text="Qeydiyyat Şəhadətnaməsi"
+            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/imageDoc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="4"
+            android:textColor="#6A6A6A"
             android:text="Qeydiyyat Şəhadətnaməsi"
             android:textSize="20sp" />
 

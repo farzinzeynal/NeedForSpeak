@@ -339,6 +339,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             Log.e("NetworkResult", it.toString())
             when(it) {
                 is NetworkResult.Success -> {
+                    it.data?.name
                 }
                 is NetworkResult.Error -> {
 

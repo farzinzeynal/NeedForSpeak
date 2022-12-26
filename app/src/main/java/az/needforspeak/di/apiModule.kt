@@ -1,5 +1,6 @@
 package az.needforspeak.di
 
+import az.needforspeak.data.AccountService
 import az.needforspeak.data.AuthService
 import az.needforspeak.data.MainService
 import org.koin.dsl.module

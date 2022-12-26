@@ -7,4 +7,8 @@ object Extentions {
     fun AppCompatActivity.showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
+    fun String?.fromStringToJid(): String {
+        return "$this@${Constants.XMPP_HOST}"
+    }
 }

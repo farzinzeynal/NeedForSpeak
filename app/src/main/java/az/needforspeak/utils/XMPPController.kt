@@ -46,7 +46,7 @@ object XMPPController {
         return (
                 if (mConnection?.isAuthenticated != true) {
                     try {
-                        val config = getConfig("10-FF-333", "333333")
+                        val config = getConfig(userName, password)
                         mConnection = XMPPTCPConnection(config)
                         mConnection?.replyTimeout = Constants.XMPP_REPLY_TIMEOUT
                         mConnection?.connect()
