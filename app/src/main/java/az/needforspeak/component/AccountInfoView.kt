@@ -13,7 +13,7 @@ class AccountInfoView (context: Context, attrs: AttributeSet) : LinearLayout(con
 
 
     init {
-        val attributes = context.obtainStyledAttributes(attrs, R.styleable.LanguagesView)
+        val attributes = context.obtainStyledAttributes(attrs, R.styleable.AccountInfoView)
         //icon.setImageDrawable(attributes.getDrawable(R.styleable.LanguagesView_languagesImage))
 
     }
