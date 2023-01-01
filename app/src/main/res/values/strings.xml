@@ -1,14 +1,151 @@
 <resources>
     <string name="app_name" translatable="false">Need For Speak</string>
     <string name="click_me">Click me</string>
-    <string name="friends">Friends</string>
     <string name="chats">Chats</string>
     <string name="market">Market</string>
-    <string name="account">Account</string>
-    <string name="search">Search</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="post_sent">Your post have been sent</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
+    <!-- Button titles -->
+    <string name="login">Login</string>
+    <string name="get_started">Get Started</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="submit">Submit</string>
+    <string name="reg_certificate">Registration Certificate</string>
+    <string name="verify">Verify number</string>
+    <string name="continue_">Continue</string>
+    <string name="connect_facebook">Connect with Facebook</string>
+    <string name="verify_code">Verify</string>
+
+    <!-- Button titles -->
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="set_password">Set password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="phone_hint">(+994) 00 000-00-00</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the</string>
+    <string name="certificate_reminder">Your request will be send to \n the administrator for approval.\n You will then receive a notification</string>
+    <string name="enter_code">Enter code</string>
+    <string name="success">Success!</string>
+    <string name="number_verified">Your number verified</string>
+    <string name="account">Account</string>
+    <string name="friends">Friends</string>
+    <string name="chat">Chat</string>
+    <string name="gloabal_groups">Global groups</string>
+    <string name="username">Username</string>
+    <string name="birth_date">Date of birth</string>
+    <string name="family_status">Family status</string>
+    <string name="registration_number">registration number</string>
+    <string name="status">Status</string>
+    <string name="interests">Interests</string>
+    <string name="education">Education</string>
+    <string name="career">Career</string>
+    <string name="phone">Phone</string>
+
+    <!--Friends -->
+    <string name="friend_requests">Friend requests</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="search">Search</string>
+    <string name="suggested_friends">Suggested Friends</string>
+    <string name="people">People</string>
+    <string name="add_friend">Add friend</string>
+    <string name="empty_title"></string>
+
+    <!--Friends -->
+    <!--Chats -->
+    <string name="mesages">Message</string>
+    <string name="last_seen">Last seen %1$s</string>
+    <string name="slide_to_cancel">Slide to cancel</string>
+    <string name="camera">Camera</string>
+    <string name="photo">Photo</string>
+    <string name="voice_sent">a Voice file</string>
+    <string name="image_sent">an Image file</string>
+    <string name="have_not_sent">have not sent yet</string>
+    <string name="menu_star">&#xEA1B;</string>
+    <string name="menu_reply">&#xEA1B;</string>
+    <string name="menu_forward">&#xEA1B;</string>
+    <string name="menu_copy">&#xEA1B;</string>
+    <string name="menu_delete">&#xEA1B;</string>
+
+    <!--Chats -->
+    <!--Groups -->
+    <string name="categories">Categories</string>
+    <string name="brands">Brands</string>
+    <string name="user_data">%1$s / %2$s</string>
+    <string name="comment_date">%1$s</string>
+    <string name="comment">%1$d Comments</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="post">Post</string>
+    <string name="write_comment">Write a comment...</string>
+    <!--Groups -->
+    <!--Settings -->
+    <string name="settings">Settings</string>
+    <string name="settings_saved_messages">Saved messages and posts</string>
+    <string name="settings_change_auto">Change an auto</string>
+    <string name="settings_notification">Notifications and sounds</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_support">Support</string>
+    <string name="settings_delete_account">Delete account</string>
+    <string name="add_an_auto">Add an Auto</string>
+    <string name="language_az">Azerbaijan</string>
+    <string name="language_en">English</string>
+    <string name="language_ru">Russian</string>
+    <string name="notifications">Notifications</string>
+    <string name="show_notification">Show Notifications</string>
+    <string name="not_set_music">Not Set</string>
+    <string name="sounds">Sounds</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Yes, delete</string>
+    <string name="delete_account_confirmation_message">Are you sure you want to delete your account? Deleting your account is permanent and will remove all content including comments, avatars and profile settings.</string>
+    <string name="write_message">Write a message ...</string>
+    <string name="send">Send</string>
+    <string name="contact_us">Or contact us:</string>
+    <string name="edit">Edit</string>
+    <string name="enter_the_sms_code">Please enter SMS Code that was sent you</string>
+    <string name="enter_phone_number">Please enter your phone number</string>
+    <string name="add_frient_find">Find</string>
+    <string name="you">You</string>
+
+    <!--Settings -->
+
+
+    <!--Shared Strings -->
+    <string name="attention">Attention</string>
+    <string name="are_you_sure">Are You sure</string>
+    <string name="expressYES">Yes</string>
+    <string name="expressNo">No</string>
+    <string name="expressOk">OK</string>
+    <string name="login_user_input_error">The username or password you entered did not match our records. Please double-check and try again.</string>
+    <string name="add_frient_no_result">Nobody found</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="add_friend_send_request">Send request</string>
+    <string name="last_seen_online">Onlayn</string>
+    <string name="last_seen_minutes">Online %d minutes ago</string>
+    <string name="last_seen_seconds">Online %d seconds ago</string>
+    <string name="last_seen_hours">Online %d hours ago</string>
+    <string name="last_seen_yesterday">Online yesterday</string>
+    <string name="last_seen_date">Online %1$s</string>
+    <string name="post_sent">Post</string>
+    <string name="menu_forward_text">Forward</string>
+    <string name="chat_forwarded">Forwarded</string>
+    <!--Shared Strings -->
+
+
+    <!--Globals-->
+    <string name="give_the_permission">Please give the permission to continue the app</string>
+    <string name="send_post_button">Post</string>
+    <string name="start_post">Start post</string>
+    <string name="send_post_subject">Subject</string>
+    <string name="send_post_body">Body</string>
+    <string name="send_post_have_sent">Your post have been sent</string>
+
+    <!--Globals-->
+
+    <string name="illegible_document_warning">The document is not illegible</string>
+    <string name="wrong_document_warning">The document is not correct</string>
 
 </resources>

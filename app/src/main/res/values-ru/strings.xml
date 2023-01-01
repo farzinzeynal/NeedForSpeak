@@ -1,9 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="click_me">Maya klik</string>
-    <string name="friends">Friends</string>
     <string name="chats">Chats</string>
     <string name="market">Market</string>
-    <string name="account">Account</string>
-    <string name="search">Search</string>
+
+    <!-- Button titles -->
+    <string name="login">Авторизоваться</string>
+    <string name="get_started">Начало работы</string>
+    <string name="login_with_facebook">Войти через Facebook</string>
+    <string name="submit">Представить</string>
+    <string name="reg_certificate">Свидетельство о регистрации</string>
+    <string name="verify">Подтвердить номер</string>
+    <string name="continue_">Продолжай</string>
+    <string name="connect_facebook">Connect with Facebook</string>
+    <string name="verify_code">Подтвердить</string>
+
+
+    <string name="user_name">Имя пользователя</string>
+    <string name="password">Пароль</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="set_password">Установить пароль</string>
+    <string name="confirm_password">Подтвердить пароль</string>
+    <string name="phone_hint">(+994) 00 000-00-00</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the</string>
+    <string name="certificate_reminder">Your request will be send to \n the administrator for approval.\n You will then receive a notification</string>
+    <string name="enter_code">Введите код</string>
+    <string name="success">Успех!</string>
+    <string name="number_verified">Ваш номер подтвержден</string>
+    <string name="account">Учетная запись</string>
+    <string name="friends">Друзья</string>
+    <string name="chat">Чаты</string>
+    <string name="gloabal_groups">Глобальные группы</string>
+    <string name="username">Имя пользователя</string>
+    <string name="birth_date">Date of birth</string>
+    <string name="family_status">Family status</string>
+    <string name="registration_number">registration number</string>
+    <string name="status">Status</string>
+    <string name="interests">interests</string>
+    <string name="education">Education</string>
+    <string name="career">Career</string>
+    <string name="phone">Номер</string>
+
+    <!--Friends -->
+    <string name="friend_requests">Запросы в друзья</string>
+    <string name="accept">Принять</string>
+    <string name="decline">Отклонить</string>
+    <string name="search">Поиск</string>
+    <string name="suggested_friends">Предложенные друзья</string>
+    <string name="people">People</string>
+    <string name="add_friend">Добавить друга</string>
+    <string name="empty_title"></string>
+
+    <!--Friends -->
+    <!--Chats -->
+    <string name="mesages">Message</string>
+    <string name="last_seen">Last seen %1$s</string>
+    <string name="slide_to_cancel">Слайд для отмены</string>
+    <string name="camera">Kамера</string>
+    <string name="photo">Альбом</string>
+    <string name="voice_sent">a Voice file</string>
+    <string name="image_sent">an Image file</string>
+    <string name="have_not_sent">have not sent yet</string>
+    <string name="menu_star">&#xEA1B;</string>
+    <string name="menu_reply">&#xEA1B;</string>
+    <string name="menu_forward">&#xEA1B;</string>
+    <string name="menu_copy">&#xEA1B;</string>
+    <string name="menu_delete">&#xEA1B;</string>
+
+    <!--Chats -->
+    <!--Groups -->
+    <string name="categories">Categories</string>
+    <string name="brands">Brands</string>
+    <string name="user_data">%1$s / %2$s</string>
+    <string name="comment_date">%1$s</string>
+    <string name="comment">%1$d Комментарии</string>
+    <string name="save">Сохранить</string>
+    <string name="share">Поделиться</string>
+    <string name="post">Опубликовать</string>
+    <string name="write_comment">Написать комментарий...</string>
+    <!--Groups -->
+    <!--Settings -->
+    <string name="settings">Настройки</string>
+    <string name="settings_saved_messages">Сохраненные сообщения и сообщения</string>
+    <string name="settings_change_auto">Измени свой автомобиль</string>
+    <string name="settings_notification">Уведомления и оповещения</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_support">Служба поддержки</string>
+    <string name="settings_delete_account">Удалить свой аккаунт</string>
+    <string name="add_an_auto"> Добавить авто </string>
+    <string name="language_az">Azerbaijan</string>
+    <string name="language_en">English</string>
+    <string name="language_ru">Russian</string>
+    <string name="notifications">Уведомления</string>
+    <string name="show_notification">Показать уведомления</string>
+    <string name="not_set_music">Not Set</string>
+    <string name="sounds">Звук</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Да, Удалить</string>
+    <string name="delete_account_confirmation_message">Вы уверены, что хотите удалить свою учетную запись? Deleting your account is permanent and will remove all content including comments, avatars and profile settings.</string>
+    <string name="write_message">Напишите сообщение ...</string>
+    <string name="send">Послать</string>
+    <string name="contact_us">Или свяжитесь с нами:</string>
+    <string name="edit">Редактировать</string>
+    <string name="enter_the_sms_code">Please enter SMS Code that was sent you</string>
+    <string name="enter_phone_number">Please enter your phone number</string>
+
+    <!--Settings -->
+
+    <!--Shared Strings -->
+    <string name="attention">Attention</string>
+    <string name="are_you_sure">Are You sure</string>
+    <string name="expressYES">Yes</string>
+    <string name="expressNo">No</string>
+    <string name="expressOk">OK</string>
+    <string name="login_user_input_error">Введенные вами имя пользователя или пароль не соответствуют нашим записям. Пожалуйста, проверьте еще раз и попробуйте снова.</string>
+    <string name="add_frient_no_result">Никто не найден</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="add_friend_send_request">Отправить запрос</string>
+    <string name="add_frient_find">Hайти</string>
+    <string name="last_seen_online">В сети</string>
+    <string name="last_seen_minutes">Онлайн %d минут назад</string>
+    <string name="last_seen_seconds">Онлайн %d сек назад</string>
+    <string name="last_seen_hours">В сети %d часов назад</string>
+    <string name="last_seen_yesterday">Вчера был онлайн</string>
+    <string name="last_seen_date">В сети %1$s</string>
+    <string name="you">You</string>
+    <string name="post_sent">Опубликовать</string>
+    <string name="menu_forward_text">Переслать</string>
+    <string name="chat_forwarded">Пересылаются</string>
+
+    <!--Shared Strings -->
+
+    <!--Globals-->
+    <string name="give_the_permission">Please give the permission to continue the app</string>
+    <string name="send_post_button">Post</string>
+    <string name="start_post">Start post</string>
+    <string name="send_post_subject">Subject</string>
+    <string name="send_post_body">Body</string>
+    <string name="send_post_have_sent">Your post have been sent</string>
+    <!--Globals-->
+
+    <string name="illegible_document_warning">The document is not illegible</string>
+    <string name="wrong_document_warning">The document is not correct</string>
+
 </resources>

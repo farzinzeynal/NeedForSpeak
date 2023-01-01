@@ -16,13 +16,14 @@ class FriendsViewModel(private val mainRepository: MainRepository): ViewModel() 
 
     fun searchUser(userName: String): MutableLiveData<ArrayList<MyAccount>> {
         val searchResult = MutableLiveData<ArrayList<MyAccount>>()
-        BaseActivity.loadingDown()
+        BaseActivity.loadingUp()
         viewModelScope.launch(Dispatchers.IO) {
             mainRepository.searchUser(userName) { result ->
                 result
                 searchResult.postValue(result)
+                BaseActivity.loadingDown()
             }
-            BaseActivity.loadingDown()
+
         }
         return searchResult
     }

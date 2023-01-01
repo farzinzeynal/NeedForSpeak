@@ -1,36 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_two_color"
     tools:context=".ui.register.AccountFragment">
+
     <LinearLayout
-        android:paddingBottom="20dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/userImage"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_profile"
-            android:background="@color/white"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:shapeAppearanceOverlay="@style/roundedProfileView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"/>
-        <include android:id="@+id/plateLayout" layout="@layout/plate_layout" />
+            android:background="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
+            app:shapeAppearanceOverlay="@style/roundedProfileView" />
+
+        <include
+            android:id="@+id/plateLayout"
+            layout="@layout/plate_layout" />
 
         <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
-
+            android:layout_marginTop="40dp"
+            app:isHidden="false"
+            app:hint="@string/name"
+            app:toogleIcon="@drawable/ic_eye">
         </az.needforspeak.component.AccountInfoView>
 
+        <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputSurename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isHidden="false"
+            app:hint="@string/surname"
+            app:toogleIcon="@drawable/ic_eye">
+        </az.needforspeak.component.AccountInfoView>
+
+        <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isHidden="false"
+            app:hint="@string/phone"
+            app:toogleIcon="@drawable/ic_eye">
+        </az.needforspeak.component.AccountInfoView>
+
+        <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:toogleIcon="@drawable/ic_eye_not"
+            app:isHidden="true"
+            app:hint="@string/status"
+            android:layout_marginTop="40dp">
+        </az.needforspeak.component.AccountInfoView>
+
+        <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputCareer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isHidden="true"
+            app:hint="Career"
+            app:toogleIcon="@drawable/ic_eye_not">
+        </az.needforspeak.component.AccountInfoView>
+
+        <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputEducation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isHidden="true"
+            app:hint="@string/education"
+            app:toogleIcon="@drawable/ic_eye_not">
+        </az.needforspeak.component.AccountInfoView>
+
+        <az.needforspeak.component.AccountInfoView
+            android:id="@+id/inputInterestes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isHidden="true"
+            app:hint="@string/interests"
+            app:toogleIcon="@drawable/ic_eye_not">
+        </az.needforspeak.component.AccountInfoView>
 
     </LinearLayout>
 </ScrollView>

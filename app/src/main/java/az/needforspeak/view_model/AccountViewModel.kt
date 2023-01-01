@@ -30,4 +30,10 @@ class AccountViewModel(private val accountRepository: AccountRepository): ViewMo
         }
     }
 
+
+    fun getUserProfileData(userId: String){
+
+
+    }
+
 }

@@ -51,7 +51,7 @@ data class Additional(
 )
 
 
-open class UserIfo(
+open class UserInfo(
     @SerializedName("value")
     var infoText: String? = null,
 

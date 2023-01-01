@@ -15,12 +15,15 @@ import az.needforspeak.component.adapter.MarketAdapter
 import az.needforspeak.databinding.FragmentAddFriendBinding
 import az.needforspeak.utils.Extentions.showToast
 import az.needforspeak.utils.MaskFormatter
+import az.needforspeak.utils.UserInfo
 import az.needforspeak.utils.hideKeyboard
 import az.needforspeak.view_model.FriendsViewModel
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_create_post.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFriendBinding::inflate) {
+class AddFriendFragment :
+    BaseFragment<FragmentAddFriendBinding>(FragmentAddFriendBinding::inflate) {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: MarketAdapter
     private val viewModel: FriendsViewModel by viewModel()
@@ -31,13 +34,18 @@ class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFrie
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        views.plateInclude.plateEditText.addTextChangedListener(MaskFormatter("99_AA_999", views.plateInclude.plateEditText))
+        views.plateInclude.plateEditText.addTextChangedListener(
+            MaskFormatter(
+                "99_AA_999",
+                views.plateInclude.plateEditText
+            )
+        )
         views.plateInclude.plateEditText.doOnTextChanged { text, start, before, count ->
             text?.let {
-                if(it.length >= 9) {
+                if (it.length >= 9) {
                     views.addFriendBtn.alpha = 1f
                     views.addFriendBtn.isEnabled = true
-                }else {
+                } else {
                     views.addFriendBtn.alpha = 0.6f
                     views.addFriendBtn.isEnabled = false
                 }
@@ -53,21 +61,30 @@ class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFrie
                     }
                 }
             }
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) { }
-            override fun afterTextChanged(s: Editable) { }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun afterTextChanged(s: Editable) {}
         })
 
 
-        views.addFriendBtn.setOnClickListener {
-            val userDatas = viewModel.searchUser(views.plateInclude.plateEditText.text.toString())
 
-            BaseActivity.loadingUp()
-            Handler().postDelayed({
-                BaseActivity.loadingDown()
-                views.findUserLayout.visibility = View.GONE
-                views.sendRequestLayout.visibility = View.VISIBLE
-                views.plateLayout.plateNum.text = views.plateInclude.plateEditText.text.toString()
-            },3000)
+
+        views.addFriendBtn.setOnClickListener {
+            viewModel.searchUser(views.plateInclude.plateEditText.text.toString())
+                .observe(viewLifecycleOwner) { userList ->
+                    if (!userList.isNullOrEmpty()) {
+                        val user = userList[0]
+                        val firstName = getUserInfo(user.firstname)
+                        val lastName = getUserInfo(user.lastname)
+                        views.findUserLayout.visibility = View.GONE
+                        views.sendRequestLayout.visibility = View.VISIBLE
+                        views.plateLayout.plateNum.text = views.plateInclude.plateEditText.text.toString()
+                    } else {
+                        Toast.makeText(requireContext(), "User not found", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+                }
         }
 
         views.btnRetry.setOnClickListener {
@@ -77,13 +94,20 @@ class AddFriendFragment : BaseFragment<FragmentAddFriendBinding>(FragmentAddFrie
         }
 
         views.btnSendRequest.setOnClickListener {
-            Toast.makeText(requireContext(), "Friend request sent",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Friend request sent", Toast.LENGTH_LONG).show()
             views.findUserLayout.visibility = View.VISIBLE
             views.sendRequestLayout.visibility = View.GONE
             views.plateInclude.plateEditText.text.clear()
         }
     }
 
+    private fun getUserInfo(userString: String?): UserInfo? {
+        return try {
+            Gson().fromJson(userString, UserInfo::class.java)
+        } catch (e: Exception) {
+            UserInfo("")
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

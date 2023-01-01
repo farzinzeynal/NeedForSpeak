@@ -14,6 +14,8 @@
     <declare-styleable name="AccountInfoView">
         <attr name="isHidden" format="boolean" />
         <attr name="isEnabled" format="boolean" />
+        <attr name="hint" format="string" />
+        <attr name="toogleIcon" format="reference" />
     </declare-styleable>
 
 </resources>

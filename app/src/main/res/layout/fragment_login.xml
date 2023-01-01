@@ -42,7 +42,7 @@
                 <EditText
                     android:id="@+id/passwordEdittext"
                     android:inputType="textPassword"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:textColor="@color/black"
@@ -51,7 +51,7 @@
                     android:background="@drawable/plate_background"/>
                 <Button
                     android:id="@+id/loginButton"
-                    android:text="Login"
+                    android:text="@string/login"
                     android:alpha="0.4"
                     android:enabled="false"
                     android:textColor="@color/white"
@@ -63,7 +63,7 @@
                     android:textColor="@color/black_light"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Forget Password?"
+                    android:text="@string/forgot_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

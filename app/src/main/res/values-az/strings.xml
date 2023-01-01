@@ -1,9 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="click_me">Mene klikle</string>
-    <string name="friends">Friends</string>
     <string name="chats">Chats</string>
     <string name="market">Market</string>
-    <string name="account">Account</string>
-    <string name="search">Search</string>
+
+
+    <!-- Button titles -->
+    <string name="login">Daxil ol</string>
+    <string name="get_started">Başla</string>
+    <string name="login_with_facebook">Facebookla daxil ol</string>
+    <string name="submit">Təqdim et</string>
+    <string name="reg_certificate">Qeydiyyat Şəhadətnaməsi</string>
+    <string name="verify">Nömrəni doğrulayın</string>
+    <string name="continue_">Davam et</string>
+    <string name="connect_facebook">Facebook ilə qoşul</string>
+    <string name="verify_code">Doğrulamaq</string>
+
+    <!-- Button titles -->
+    <string name="user_name">İstifadəçi adı</string>
+    <string name="password">Şifrə</string>
+    <string name="name">Ad</string>
+    <string name="surname">Soyad</string>
+    <string name="set_password">Şifrə seçin</string>
+    <string name="confirm_password">Şifrəni təsdiq et</string>
+    <string name="login_user_input_error">The username or password\n you entered did not match our records.\n Please double-check and try again.</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="phone_hint">(+994) 00 000-00-00</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the</string>
+    <string name="certificate_reminder">Sorğunuz təsdiq üçün administratora\n göndəriləcəkdir. Sonra bildiriş alacaqsınız</string>
+    <string name="enter_code">Kodu daxil edin</string>
+    <string name="success">Uğurlu!</string>
+    <string name="number_verified">Nömrəniz təsdiqləndi</string>
+    <string name="account">Hesab</string>
+    <string name="friends">Dostlar</string>
+    <string name="chat">Söhbətlər</string>
+    <string name="gloabal_groups">Qlobal Qruplar</string>
+    <string name="username">İstifadəçi adı</string>
+    <string name="birth_date">Doğum tarixi</string>
+    <string name="family_status">Ailə statusu</string>
+    <string name="registration_number">Reqistasiya nömrəsi</string>
+    <string name="status">Status</string>
+    <string name="interests">Maraqlar</string>
+    <string name="education">Təhsil</string>
+    <string name="career">Karyera</string>
+    <string name="illegible_document_warning">The document is not illegible</string>
+    <string name="wrong_document_warning">The document is not correct</string>
+    <string name="phone">Telefon</string>
+
+
+    <!--Friends -->
+    <string name="friend_requests">Dost istəkləri</string>
+    <string name="accept">Qəbul</string>
+    <string name="decline">Imtina</string>
+    <string name="search">Axtar</string>
+    <string name="suggested_friends">Təklif olunan dostlar</string>
+    <string name="people">Şəxslər</string>
+    <string name="add_friend">Dost əlavə et</string>
+    <string name="empty_title"></string>
+    <string name="friend_accepted">Accepted</string>
+    <string name="friend_declined">Declined</string>
+    <string name="add_frient_no_result">Heç kim tapılmadı</string>
+    <string name="add_frient_find">Tap</string>
+    <string name="add_friend_send_request">Sorğu göndərin</string>
+    <string name="add_friend_find_another">Find another</string>
+    <string name="try_again">Try again</string>
+
+    <!--Friends -->
+    <!--Chats -->
+    <string name="mesages">Mesajlar</string>
+    <!--LastActivity-->
+    <string name="last_seen_online">online</string>
+    <string name="last_seen_seconds">Onlayn %d saniyə əvvəl</string>
+    <string name="last_seen_minutes">Onlayn %d dəqiqə əvvəl</string>
+    <string name="last_seen_hours">Onlayn %d saat əvvəl</string>
+    <!--LastActivity-->
+    <string name="slide_to_cancel">Ləğv etmək üçün </string>
+    <string name="camera">Kamera</string>
+    <string name="photo">Şəkil</string>
+    <string name="voice_sent">Səs yazısı</string>
+    <string name="post_sent">Göndər</string>
+    <string name="image_sent">Şəkil</string>
+    <string name="have_not_sent">Hələ göndərilməyib</string>
+    <string name="menu_star">&#xEA1B;</string>
+    <string name="menu_reply">&#xEA1B;</string>
+    <string name="menu_forward">&#xEA1B;</string>
+    <string name="menu_copy">&#xEA1B;</string>
+    <string name="menu_delete">&#xEA1B;</string>
+    <string name="menu_forward_text">Ötur</string>
+    <string name="chat_forwarded">Yönləndirilib</string>
+    <string name="message_is_not_available">This message is not longer available</string>
+    <string name="you">Sən</string>
+    <!--Chats -->
+    <!--Groups -->
+    <string name="categories">Categories</string>
+    <string name="brands">Brands</string>
+    <string name="user_data">%1$s / %2$s</string>
+    <string name="comment_date">%1$s</string>
+    <string name="comment">%1$d Komment</string>
+    <string name="save">Saxla</string>
+    <string name="share">Paylaş</string>
+    <string name="post">Göndər</string>
+    <string name="write_comment">Şərh yazın...</string>
+    <!--Groups -->
+    <!--Settings -->
+    <string name="settings">Ayarlar</string>
+    <string name="settings_saved_messages">Saxlanılan mesajlar və yazılar</string>
+    <string name="settings_change_auto">Avtomobilinizi dəyişdirin</string>
+    <string name="settings_notification">Bildirişlər və siqnallar</string>
+    <string name="settings_language">Dil</string>
+    <string name="settings_support">Texniki dəstək</string>
+    <string name="settings_delete_account">Hesabınızı silin</string>
+    <string name="add_an_auto"> Avto əlavə et </string>
+    <string name="language_az">Azerbaijan</string>
+    <string name="language_en">English</string>
+    <string name="language_ru">Russian</string>
+    <string name="notifications">Notifications</string>
+    <string name="show_notification">Bildirişləri göstər</string>
+    <string name="not_set_music">Not Set</string>
+    <string name="sounds">Səs</string>
+    <string name="cancel">Ləğv et</string>
+    <string name="delete">Bəli, sil</string>
+    <string name="delete_account_confirmation_message">Hesabınızı silməyinizə əminsiniz? Deleting your account is permanent and will remove all content including comments, avatars and profile settings.</string>
+    <string name="write_message">Write a message ...</string>
+    <string name="send">Göndər</string>
+    <string name="contact_us">Və ya biz imlə əlaqə saxlayin:</string>
+    <string name="edit">Düzəliş et</string>
+    <string name="enter_the_sms_code">Zəhmət olmasa SMS ilə gondərilmiş Kodu daxil edin</string>
+    <string name="enter_phone_number">Telefon nömrənizi daxil edin</string>
+    <string name="support_message_was_send">Your message sent</string>
+    <!--Settings -->
+
+    <!--Shared Strings -->
+    <string name="attention">Attention</string>
+    <string name="are_you_sure">Are You sure</string>
+    <string name="expressYES">Yes</string>
+    <string name="expressNo">No</string>
+    <string name="expressOk">OK</string>
+    <!--Shared Strings -->
+    <!--Profile -->
+    <string name="not_visible_content">This content is not visible</string>
+    <!--Profile end region -->
+
+    <!--Globals-->
+    <string name="give_the_permission">Please give the permission to continue the app</string>
+    <string name="send_post_button">Post</string>
+    <string name="start_post">Start post</string>
+    <string name="send_post_subject">Subject</string>
+    <string name="send_post_body">Body</string>
+    <string name="send_post_have_sent">Your post have been sent</string>
+    <string name="last_seen_yesterday">Onlayn dünən</string>
+    <string name="last_seen_date">Onlayn %1$s</string>
+    <string name="last_seen">Last seen %1$s</string>
+    <!--Globals-->
+
+
 </resources>

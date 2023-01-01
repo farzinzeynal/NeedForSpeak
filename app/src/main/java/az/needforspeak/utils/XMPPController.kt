@@ -294,11 +294,18 @@ object XMPPController {
         }
     }
 
-    fun getUserFromUserId(userId: String?, callback: (User) -> Unit) {
+    fun getUserFromUserId(userId: String?, callback: (User?) -> Unit) {
         runXMPPState {
-            val vCardManager: VCardManager = VCardManager.getInstanceFor(mConnection)
-            val userVCard = vCardManager.loadVCard(JidCreate.entityBareFrom(userId))
-            callback.invoke(parseVCardData(userVCard))
+            try {
+                val vCardManager: VCardManager = VCardManager.getInstanceFor(mConnection)
+                val userVCard = vCardManager.loadVCard(JidCreate.entityBareFrom(userId))
+                callback.invoke(parseVCardData(userVCard))
+            }
+            catch (ex:Exception){
+                callback.invoke(null)
+            }
+
+
         }
     }
 
