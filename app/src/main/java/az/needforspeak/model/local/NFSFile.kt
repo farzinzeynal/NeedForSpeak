@@ -1,8 +1,8 @@
 package az.needforspeak.model.local
 
 
-import com.needforspeak.models.typedefs.FileExtensionTypes
-import com.needforspeak.models.typedefs.FolderTypes
+import az.needforspeak.utils.type_defs.FileExtensionTypes
+import az.needforspeak.utils.type_defs.FolderTypes
 import java.io.File
 
 class NFSFile(

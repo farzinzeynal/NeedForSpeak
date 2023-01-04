@@ -4,6 +4,7 @@ import az.needforspeak.base.BaseApiResponse
 import az.needforspeak.data.AccountService
 import az.needforspeak.data.MainService
 import az.needforspeak.model.remote.auth.LoginResponseModel
+import az.needforspeak.model.remote.auth.ProfileResponseModel
 import az.needforspeak.model.remote.auth.User
 import az.needforspeak.utils.MyAccount
 import az.needforspeak.utils.NetworkResult
@@ -18,7 +19,7 @@ import kotlinx.coroutines.launch
 import org.jivesoftware.smack.packet.Presence
 import org.jxmpp.jid.impl.JidCreate
 
-class AccountRepository() : BaseApiResponse() {
+class AccountRepository(private val service: AccountService) : BaseApiResponse() {
 
 
     fun getUserDataById(userId: String, callback: (User?) -> Unit)  {
@@ -31,5 +32,12 @@ class AccountRepository() : BaseApiResponse() {
             }
         }
     }
+
+    suspend fun getProfile(userId: String): Flow<NetworkResult<ProfileResponseModel>> {
+        return flow {
+            emit(safeApiCall { service.getProfile(userId) })
+        }.flowOn(Dispatchers.IO)
+    }
+
 
 }

@@ -10,5 +10,5 @@ val repositoryModule = module {
     single { AuthRepositry(get()) }
     single { ChatsRepository(get()) }
     single { MainRepository(get()) }
-    single { AccountRepository() }
+    single { AccountRepository(get()) }
 }

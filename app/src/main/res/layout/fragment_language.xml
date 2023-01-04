@@ -27,5 +27,15 @@
         app:languagesImage="@drawable/ic_flag_ru"
         android:id="@+id/ru"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/view6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/divider_color"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 
 </LinearLayout>

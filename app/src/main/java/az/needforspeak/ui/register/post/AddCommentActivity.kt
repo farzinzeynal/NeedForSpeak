@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -13,19 +12,11 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.lifecycle.ViewModelProvider
 import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivityCreatePostBinding
 import az.needforspeak.model.local.*
-import az.needforspeak.utils.Constants
 import az.needforspeak.utils.Extentions.showToast
-import az.needforspeak.utils.UtilFuntions
-import coil.load
-import com.google.gson.Gson
-import com.needforspeak.models.typedefs.FileExtensionTypes
-import com.needforspeak.models.typedefs.FolderTypes
-import com.needforspeak.ui.network.model.PostBody
 import kotlinx.android.synthetic.main.activity_create_post.*
 import java.io.*
 import java.util.*

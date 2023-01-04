@@ -9,4 +9,5 @@ import retrofit2.Retrofit
 val apiModule = module {
     single(createdAtStart = false) { get<Retrofit>().create(AuthService::class.java) }
     single(createdAtStart = false) { get<Retrofit>().create(MainService::class.java) }
+    single(createdAtStart = false) { get<Retrofit>().create(AccountService::class.java) }
 }

@@ -1,4 +1,4 @@
-package az.needforspeak.utils
+package az.needforspeak.utils.type_defs
 
 import androidx.annotation.IntDef
 

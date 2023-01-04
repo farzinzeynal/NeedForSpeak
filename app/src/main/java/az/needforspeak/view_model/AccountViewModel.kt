@@ -19,6 +19,10 @@ import kotlinx.coroutines.launch
 
 class AccountViewModel(private val accountRepository: AccountRepository): ViewModel() {
 
+    private val _profileResponse: MutableLiveData<NetworkResult<ProfileResponseModel>> = MutableLiveData()
+    val profileResponse: LiveData<NetworkResult<ProfileResponseModel>> = _profileResponse
+
+
     fun getUserDataByUserId(userId: String): MutableLiveData<User> {
         return MutableLiveData<User>().apply {
             viewModelScope.launch {
@@ -30,10 +34,11 @@ class AccountViewModel(private val accountRepository: AccountRepository): ViewMo
         }
     }
 
-
-    fun getUserProfileData(userId: String){
-
-
+    fun getUserProfileData(userId: String) = viewModelScope.launch {
+        accountRepository.getProfile(userId).collect { values ->
+            _profileResponse.value = values
+        }
     }
+
 
 }

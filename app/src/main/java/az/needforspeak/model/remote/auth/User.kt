@@ -1,8 +1,7 @@
 package az.needforspeak.model.remote.auth
 
 import androidx.room.*
-import az.needforspeak.utils.FriendListType
-import az.needforspeak.utils.UserInfo
+import az.needforspeak.utils.type_defs.FriendListType
 import az.needforspeak.utils.UserType
 import az.needforspeak.utils.fromJidToString
 import com.google.gson.Gson

@@ -29,70 +29,241 @@
             android:id="@+id/plateLayout"
             layout="@layout/plate_layout" />
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:layout_marginTop="40dp"
-            app:isHidden="false"
-            app:hint="@string/name"
-            app:toogleIcon="@drawable/ic_eye">
-        </az.needforspeak.component.AccountInfoView>
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputSurename"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/toogleName"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isHidden="false"
-            app:hint="@string/surname"
-            app:toogleIcon="@drawable/ic_eye">
-        </az.needforspeak.component.AccountInfoView>
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputPhoneNumber"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/surname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputSurename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/toogleSurename"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isHidden="false"
-            app:hint="@string/phone"
-            app:toogleIcon="@drawable/ic_eye">
-        </az.needforspeak.component.AccountInfoView>
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputStatus"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/tooglePhoneNumber"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:toogleIcon="@drawable/ic_eye_not"
-            app:isHidden="true"
-            app:hint="@string/status"
-            android:layout_marginTop="40dp">
-        </az.needforspeak.component.AccountInfoView>
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputCareer"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/status">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/toogleStatus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isHidden="true"
-            app:hint="Career"
-            app:toogleIcon="@drawable/ic_eye_not">
-        </az.needforspeak.component.AccountInfoView>
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputEducation"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/career">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputCareer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/toogleCareer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isHidden="true"
-            app:hint="@string/education"
-            app:toogleIcon="@drawable/ic_eye_not">
-        </az.needforspeak.component.AccountInfoView>
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
-        <az.needforspeak.component.AccountInfoView
-            android:id="@+id/inputInterestes"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/education">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/toogleEducation"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isHidden="true"
-            app:hint="@string/interests"
-            app:toogleIcon="@drawable/ic_eye_not">
-        </az.needforspeak.component.AccountInfoView>
+            android:background="@drawable/material_input_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/interests">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputInterestes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/toogleInterestes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 </ScrollView>

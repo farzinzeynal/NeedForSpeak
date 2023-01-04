@@ -1,4 +1,4 @@
-package com.needforspeak.models.typedefs
+package az.needforspeak.utils.type_defs
 
 import androidx.annotation.StringDef
 
