@@ -109,4 +109,9 @@
     <style name="InactiveText">
         <item name="android:textColor">@color/bottom_icon_unselect_color</item>
     </style>
+
+    <style name="hintTextAppearance" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>

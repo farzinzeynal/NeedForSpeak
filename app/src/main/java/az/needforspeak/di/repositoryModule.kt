@@ -1,9 +1,6 @@
 package az.needforspeak.di
 
-import az.needforspeak.repository.AccountRepository
-import az.needforspeak.repository.AuthRepositry
-import az.needforspeak.repository.ChatsRepository
-import az.needforspeak.repository.MainRepository
+import az.needforspeak.repository.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -11,4 +8,5 @@ val repositoryModule = module {
     single { ChatsRepository(get()) }
     single { MainRepository(get()) }
     single { AccountRepository(get()) }
+    single { FriendsRepository(get()) }
 }

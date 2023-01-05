@@ -143,5 +143,6 @@
 
     <string name="illegible_document_warning">The document is not illegible</string>
     <string name="wrong_document_warning">The document is not correct</string>
+    <string name="not_visible_content">This content is not visible</string>
 
 </resources>

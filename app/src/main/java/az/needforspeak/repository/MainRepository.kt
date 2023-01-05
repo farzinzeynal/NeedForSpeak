@@ -18,17 +18,12 @@ import org.jxmpp.jid.impl.JidCreate
 
 class MainRepository(private val service: MainService) : BaseApiResponse() {
 
-    fun searchUser(userName: String, calback: (ArrayList<MyAccount>?) -> Unit) {
+    fun searchUserXMPP(userName: String, calback: (ArrayList<MyAccount>?) -> Unit) {
         XMPPController.checkIfUserExists(userName) {
             it
             calback.invoke(it)
         }
     }
 
-    fun sendFriendRequest(userJid: String?) {
-        GlobalScope.launch {
-            val jid = JidCreate.bareFrom(userJid)
-            XMPPController.respondFriendRequest(jid, Presence.Type.subscribe)
-        }
-    }
+
 }

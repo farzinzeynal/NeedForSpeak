@@ -3,6 +3,7 @@ package az.needforspeak.repository
 import az.needforspeak.base.BaseApiResponse
 import az.needforspeak.data.AccountService
 import az.needforspeak.data.MainService
+import az.needforspeak.model.remote.auth.InputValueModel
 import az.needforspeak.model.remote.auth.LoginResponseModel
 import az.needforspeak.model.remote.auth.ProfileResponseModel
 import az.needforspeak.model.remote.auth.User
@@ -38,6 +39,13 @@ class AccountRepository(private val service: AccountService) : BaseApiResponse()
             emit(safeApiCall { service.getProfile(userId) })
         }.flowOn(Dispatchers.IO)
     }
+
+    suspend fun updateProfileData(userId: String, key:String, value: String, isVisible: Boolean): Flow<NetworkResult<String>> {
+        return flow {
+            emit(safeApiCall { service.updateProfileData(userId,key,InputValueModel(value,isVisible)) })
+        }.flowOn(Dispatchers.IO)
+    }
+
 
 
 }

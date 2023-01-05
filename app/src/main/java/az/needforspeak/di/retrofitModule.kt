@@ -3,10 +3,10 @@ package az.needforspeak.di
 import android.content.Context
 import android.content.SharedPreferences
 import az.needforspeak.BuildConfig
+import az.needforspeak.utils.AuthUtils
 import com.google.gson.GsonBuilder
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
-import okio.IOException
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.parameter.parametersOf
@@ -38,20 +38,17 @@ val retrofitModule = module {
                 val uAgent = sharedPreferences.getString("user_agent", "")
                 val lang = sharedPreferences.getString("lang", "az")
                 
-//                if(!token.isNullOrEmpty()) {
-//                    addHeader("Authorization", "Bear $token")
-//                }else {
-//                    sharedPreferences.edit().putString("token", "UU02939293").commit()
-//                }
+                //if(!token.isNullOrEmpty()) {
+                //    addHeader("Authorization", "Bear $token")
+                //}else {
+                //    sharedPreferences.edit().putString("token", "UU02939293").commit()
+                //}
                 if(!uAgent.isNullOrEmpty())
                     addHeader("User-Agent", uAgent)
                 if(!lang.isNullOrEmpty()) {
                     addHeader("Accept-Language", lang)
                 }
-                addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNYW1tYWRiYXlsaSIsImlhdCI6MTYwNDI0NjUxNSwiZXhwIjoxOTUxNTc0NTE1LCJhdWQiOiJhcGkubWFtbWFkYmF5bGkuY29tIiwic3ViIjoiamF2YWRAbWFtbWFkYmF5bGkuY29tIn0.fb1Vy5DzmaExiRoNAEWlB4F46KyLv2oO9acDNpTF7Us")
-
-//                addHeader("Authorization", "Bear eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNYW1tYWRiYXlsaSIsImlhdCI6MTYwNDI0NjUxNSwiZXhwIjoxOTUxNTc0NTE1LCJhdWQiOiJhcGkubWFtbWFkYmF5bGkuY29tIiwic3ViIjoiamF2YWRAbWFtbWFkYmF5bGkuY29tIn0.fb1Vy5DzmaExiRoNAEWlB4F46KyLv2oO9acDNpTF7Us")
-
+                addHeader("Authorization", AuthUtils.token)
                 addHeader("Accept", "application/json")
                 addHeader("Content-Type", "application/json")
             }.build())

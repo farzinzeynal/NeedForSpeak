@@ -17,6 +17,8 @@
         android:gravity="center"
         android:orientation="vertical">
         <include android:id="@+id/plateInclude" layout="@layout/plate_input_layout" />
+
+
         <Button
             android:id="@+id/addFriendBtn"
             android:text="Find"
@@ -38,6 +40,7 @@
         android:visibility="gone"
         android:orientation="vertical">
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/userProfileImage"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_profile"
@@ -48,6 +51,18 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
         <include android:id="@+id/plateLayout" layout="@layout/plate_layout" />
+
+        <TextView
+            android:id="@+id/userFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:text=""
+            android:textSize="20sp"/>
 
         <LinearLayout
             android:layout_width="200dp"

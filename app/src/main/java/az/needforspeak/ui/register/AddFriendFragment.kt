@@ -1,9 +1,11 @@
 package az.needforspeak.ui.register
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
@@ -13,11 +15,12 @@ import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.component.adapter.MarketAdapter
 import az.needforspeak.databinding.FragmentAddFriendBinding
+import az.needforspeak.utils.*
 import az.needforspeak.utils.Extentions.showToast
-import az.needforspeak.utils.MaskFormatter
-import az.needforspeak.utils.UserInfo
-import az.needforspeak.utils.hideKeyboard
 import az.needforspeak.view_model.FriendsViewModel
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_create_post.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,6 +34,7 @@ class AddFriendFragment :
         super.onCreate(savedInstanceState)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -52,6 +56,7 @@ class AddFriendFragment :
             }
         }
 
+
         views.plateInclude.plateEditText.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (views.plateInclude.plateEditText.text.length + 1 === 3 || views.plateInclude.plateEditText.text.length + 1 === 6) {
@@ -71,34 +76,50 @@ class AddFriendFragment :
 
         views.addFriendBtn.setOnClickListener {
             viewModel.searchUser(views.plateInclude.plateEditText.text.toString())
-                .observe(viewLifecycleOwner) { userList ->
-                    if (!userList.isNullOrEmpty()) {
-                        val user = userList[0]
-                        val firstName = getUserInfo(user.firstname)
-                        val lastName = getUserInfo(user.lastname)
-                        views.findUserLayout.visibility = View.GONE
-                        views.sendRequestLayout.visibility = View.VISIBLE
-                        views.plateLayout.plateNum.text = views.plateInclude.plateEditText.text.toString()
-                    } else {
-                        Toast.makeText(requireContext(), "User not found", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-
-                }
         }
 
         views.btnRetry.setOnClickListener {
             views.findUserLayout.visibility = View.VISIBLE
             views.sendRequestLayout.visibility = View.GONE
+            views.userFullName.visibility = View.GONE
             views.plateInclude.plateEditText.text.clear()
         }
 
         views.btnSendRequest.setOnClickListener {
+            viewModel.sendFriendRequest(views.plateLayout.plateNum.text.toString())
             Toast.makeText(requireContext(), "Friend request sent", Toast.LENGTH_LONG).show()
             views.findUserLayout.visibility = View.VISIBLE
+            views.userFullName.visibility = View.GONE
             views.sendRequestLayout.visibility = View.GONE
             views.plateInclude.plateEditText.text.clear()
         }
+
+
+        viewModel.userSearchLiveData.observe(viewLifecycleOwner) { user ->
+            BaseActivity.loadingDown()
+            if (user.isNotNull()) {
+                views.userFullName.text = user.data?.name?.value + " " + user.data?.surname?.value
+                views.userFullName.visibility = View.VISIBLE
+                views.findUserLayout.visibility = View.GONE
+                views.sendRequestLayout.visibility = View.VISIBLE
+                views.plateLayout.plateNum.text = views.plateInclude.plateEditText.text.toString()
+                downloadUserImage(views.plateInclude.plateEditText.text.toString())
+                hideKeyboard(requireActivity())
+            } else {
+                Toast.makeText(requireContext(), "User not found", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+        }
+    }
+
+    private fun downloadUserImage(userId: String) {
+        val url = "https://api.needforspeak.xyz/profile/$userId/profile-picture"
+        val auth: LazyHeaders = LazyHeaders.Builder() // can be cached in a field and reused
+            .addHeader("Authorization", AuthUtils.token)
+            .build()
+
+        Glide.with(this).load(GlideUrl(url, auth)).error(R.drawable.ic_profile).into(views.userProfileImage)
     }
 
     private fun getUserInfo(userString: String?): UserInfo? {

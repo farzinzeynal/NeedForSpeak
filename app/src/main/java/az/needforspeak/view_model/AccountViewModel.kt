@@ -22,23 +22,24 @@ class AccountViewModel(private val accountRepository: AccountRepository): ViewMo
     private val _profileResponse: MutableLiveData<NetworkResult<ProfileResponseModel>> = MutableLiveData()
     val profileResponse: LiveData<NetworkResult<ProfileResponseModel>> = _profileResponse
 
+    private val _updateProfileResponse: MutableLiveData<NetworkResult<String>> = MutableLiveData()
+    val updateProfileResponse: LiveData<NetworkResult<String>> = _updateProfileResponse
 
-    fun getUserDataByUserId(userId: String): MutableLiveData<User> {
-        return MutableLiveData<User>().apply {
-            viewModelScope.launch {
-                if (XMPPController.isConnected())
-                    accountRepository.getUserDataById(userId) {
-                        postValue(it)
-                    }
-            }
-        }
-    }
 
     fun getUserProfileData(userId: String) = viewModelScope.launch {
         accountRepository.getProfile(userId).collect { values ->
             _profileResponse.value = values
         }
     }
+
+
+    fun updateProfileData(userId: String, key:String, value: String, isVisible: Boolean) = viewModelScope.launch {
+        accountRepository.updateProfileData(userId,key,value,isVisible).collect { values ->
+            _updateProfileResponse.value = values
+        }
+    }
+
+
 
 
 }

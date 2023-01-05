@@ -8,6 +8,7 @@
     tools:context=".ui.register.AccountFragment">
 
     <LinearLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -30,6 +31,7 @@
             layout="@layout/plate_layout" />
 
         <LinearLayout
+            android:id="@+id/nameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -43,6 +45,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/name">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -51,6 +54,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,6 +69,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/sureNameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -76,6 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/surname">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -84,6 +91,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,6 +106,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/phoneNumberLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -109,6 +119,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/phone">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -117,6 +128,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,6 +143,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/statusLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -143,6 +157,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/status">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -151,6 +166,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -164,6 +181,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/careerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -176,6 +194,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/career">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -184,6 +203,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -197,6 +218,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/educationLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -209,6 +231,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/education">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -217,6 +240,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -230,6 +255,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/interestsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/material_input_background"
@@ -242,6 +268,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/hintTextAppearance"
                 android:hint="@string/interests">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -250,6 +277,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:maxLines="1"
+                    android:singleLine="true"
+                    android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 

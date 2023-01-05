@@ -1,0 +1,5 @@
+package az.needforspeak.utils
+
+object AuthUtils {
+    val token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNYW1tYWRiYXlsaSIsImlhdCI6MTYwNDI0NjUxNSwiZXhwIjoxOTUxNTc0NTE1LCJhdWQiOiJhcGkubWFtbWFkYmF5bGkuY29tIiwic3ViIjoiamF2YWRAbWFtbWFkYmF5bGkuY29tIn0.fb1Vy5DzmaExiRoNAEWlB4F46KyLv2oO9acDNpTF7Us"
+}
