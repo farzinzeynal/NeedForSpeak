@@ -1,5 +1,6 @@
-package az.needforspeak.model.remote.auth
+package az.needforspeak.model.remote.auth.response
 
+import az.needforspeak.model.remote.auth.InputValueModel
 import com.google.gson.annotations.SerializedName
 
 data class UserSearchResponse(
@@ -13,4 +14,4 @@ data class UserSearchResponse(
     @SerializedName("profile-pictures")
     val profile_pictures: ArrayList<String>,
 
-)
+    )

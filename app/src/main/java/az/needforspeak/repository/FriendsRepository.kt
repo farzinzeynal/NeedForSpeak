@@ -1,14 +1,10 @@
 package az.needforspeak.repository
 
 import az.needforspeak.base.BaseApiResponse
-import az.needforspeak.data.AccountService
 import az.needforspeak.data.FriendsService
-import az.needforspeak.data.MainService
-import az.needforspeak.model.remote.auth.*
-import az.needforspeak.utils.MyAccount
+import az.needforspeak.model.remote.auth.response.UserSearchResponse
 import az.needforspeak.utils.NetworkResult
 import az.needforspeak.utils.XMPPController
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow

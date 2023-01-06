@@ -38,6 +38,7 @@ class FriendsFragment : BaseFragment<FragmentFriendsBinding>(FragmentFriendsBind
         uList.add(UserModel(plateNumber =  "10-AA-003", name = "Test", surname = "Tester", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
         uList.add(UserModel(plateNumber =  "10-DD-555", name = "asdad", surname = "asdad", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
         uList.add(UserModel(plateNumber =  "10-FF-333", name = "sad", surname = "asd", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
+        uList.add(UserModel(plateNumber =  "12-AA-045", name = "sad", surname = "asd", phone = "+9947092992", photo = "https://thumbs.dreamstime.com/b/portrait-young-beautiful-girl-fashion-photo-29870052.jpg", desc = "Llsd", status = "", career = "", education = null, interests = null))
         adapter = UserAdapter(requireContext()) {
             it
             findNavController().navigate(R.id.accountFragment, bundleOf("friendUserId" to it.plateNumber), getNavOptions())

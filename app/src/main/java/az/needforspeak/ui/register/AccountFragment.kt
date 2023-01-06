@@ -6,16 +6,14 @@ import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.databinding.FragmentAccountBinding
-import az.needforspeak.model.remote.auth.ProfileResponseModel
+import az.needforspeak.model.remote.auth.response.ProfileResponseModel
 import az.needforspeak.utils.AuthUtils
 import az.needforspeak.utils.SessionManager
 import az.needforspeak.view_model.AccountViewModel
-import coil.load
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.android.synthetic.main.fragment_account.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBinding::inflate),
@@ -71,8 +69,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
 
 
     private fun initViews() {
-
-
         views.inputName.onFocusChangeListener=this
         views.inputSurename.onFocusChangeListener=this
         views.inputPhoneNumber.onFocusChangeListener=this
@@ -205,40 +201,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     }
 
 
-    fun setInputsEnabled(isEnabled: Boolean){
-        if (isEnabled){
-            views.nameLayout.isEnabled=true
-            views.sureNameLayout.isEnabled=true
-            views.phoneNumberLayout.isEnabled=true
-            views.statusLayout.isEnabled=true
-            views.careerLayout.isEnabled=true
-            views.educationLayout.isEnabled=true
-            views.inputInterestes.isEnabled=true
-            views.toogleName.isEnabled=true
-            views.toogleSurename.isEnabled=true
-            views.tooglePhoneNumber.isEnabled=true
-            views.toogleStatus.isEnabled=true
-            views.toogleCareer.isEnabled=true
-            views.toogleEducation.isEnabled=true
-            views.toogleInterestes.isEnabled=true
-        }
-        else{
-            views.inputName.isEnabled=false
-            views.inputSurename.isEnabled=false
-            views.inputPhoneNumber.isEnabled=false
-            views.inputStatus.isEnabled=false
-            views.inputCareer.isEnabled=false
-            views.inputEducation.isEnabled=false
-            views.inputInterestes.isEnabled=false
-            views.toogleName.isEnabled=false
-            views.toogleSurename.isEnabled=false
-            views.tooglePhoneNumber.isEnabled=false
-            views.toogleStatus.isEnabled=false
-            views.toogleCareer.isEnabled=false
-            views.toogleEducation.isEnabled=false
-            views.toogleInterestes.isEnabled=false
-        }
-    }
+
 
     override fun onClick(view: View?) {
         when(view?.id){
@@ -338,6 +301,41 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
             }
         }
 
+    }
+
+    fun setInputsEnabled(isEnabled: Boolean){
+        if (isEnabled){
+            views.nameLayout.isEnabled=true
+            views.sureNameLayout.isEnabled=true
+            views.phoneNumberLayout.isEnabled=true
+            views.statusLayout.isEnabled=true
+            views.careerLayout.isEnabled=true
+            views.educationLayout.isEnabled=true
+            views.inputInterestes.isEnabled=true
+            views.toogleName.isEnabled=true
+            views.toogleSurename.isEnabled=true
+            views.tooglePhoneNumber.isEnabled=true
+            views.toogleStatus.isEnabled=true
+            views.toogleCareer.isEnabled=true
+            views.toogleEducation.isEnabled=true
+            views.toogleInterestes.isEnabled=true
+        }
+        else{
+            views.inputName.isEnabled=false
+            views.inputSurename.isEnabled=false
+            views.inputPhoneNumber.isEnabled=false
+            views.inputStatus.isEnabled=false
+            views.inputCareer.isEnabled=false
+            views.inputEducation.isEnabled=false
+            views.inputInterestes.isEnabled=false
+            views.toogleName.isEnabled=false
+            views.toogleSurename.isEnabled=false
+            views.tooglePhoneNumber.isEnabled=false
+            views.toogleStatus.isEnabled=false
+            views.toogleCareer.isEnabled=false
+            views.toogleEducation.isEnabled=false
+            views.toogleInterestes.isEnabled=false
+        }
     }
 
     override fun onPause() {

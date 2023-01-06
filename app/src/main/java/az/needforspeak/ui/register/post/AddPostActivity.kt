@@ -16,7 +16,7 @@ import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivityCreatePostBinding
 import az.needforspeak.model.local.*
-import az.needforspeak.utils.Extentions.showToast
+import az.needforspeak.utils.showToast
 import kotlinx.android.synthetic.main.activity_create_post.*
 import java.io.*
 import java.util.*

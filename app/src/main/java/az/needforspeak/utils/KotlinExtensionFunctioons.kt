@@ -4,10 +4,13 @@ import android.graphics.Bitmap
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import az.needforspeak.R
+import az.needforspeak.utils.image.ImageUtils
 import coil.load
 import java.io.File
 import java.io.FileOutputStream
@@ -31,6 +34,16 @@ fun <T> MutableLiveData<ArrayList<T>>.removeAt(position: Int) {
         updatedItems.removeAt(position)
         this.postValue(updatedItems)
     }
+}
+
+fun AppCompatActivity.showToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+
+fun File.compress() {
+    val imageMap = ImageUtils.getInstant().getCompressedBitmap(absolutePath)
+    imageMap.persistImage(this)
 }
 
 /**

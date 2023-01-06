@@ -25,7 +25,7 @@
     <string name="confirm_password">Şifrəni təsdiq et</string>
     <string name="login_user_input_error">The username or password\n you entered did not match our records.\n Please double-check and try again.</string>
     <string name="forgot_password">Forgot password?</string>
-    <string name="phone_hint">(+994) 00 000-00-00</string>
+    <string name="phone_hint">xx xxx-xx-xx (mob.)</string>
     <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the</string>
     <string name="certificate_reminder">Sorğunuz təsdiq üçün administratora\n göndəriləcəkdir. Sonra bildiriş alacaqsınız</string>
     <string name="enter_code">Kodu daxil edin</string>
@@ -39,6 +39,7 @@
     <string name="birth_date">Doğum tarixi</string>
     <string name="family_status">Ailə statusu</string>
     <string name="registration_number">Reqistasiya nömrəsi</string>
+    <string name="registration">Reqistasiya</string>
     <string name="status">Status</string>
     <string name="interests">Maraqlar</string>
     <string name="education">Təhsil</string>
@@ -151,6 +152,7 @@
     <string name="last_seen_yesterday">Onlayn dünən</string>
     <string name="last_seen_date">Onlayn %1$s</string>
     <string name="last_seen">Last seen %1$s</string>
+    <string name="registration_certificates">Registration Certificate</string>
     <!--Globals-->
 
 

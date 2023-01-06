@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import az.needforspeak.utils.helpers.LocaleHelper
 import org.jxmpp.jid.Jid
 import org.jxmpp.jid.impl.JidCreate
 import java.util.*
@@ -97,6 +98,12 @@ object SessionManager {
             EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
             EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
         )
+    }
+
+    fun getApplicationLanguage(): String {
+        return mApplicationContext?.let {
+            LocaleHelper.getLanguage(it)
+        } ?: Locale.getDefault().language
     }
 
 }

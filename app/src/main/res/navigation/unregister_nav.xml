@@ -10,4 +10,18 @@
         android:name="az.needforspeak.ui.unregister.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="az.needforspeak.ui.unregister.RegistrationFragment"
+        android:label="@string/registration" >
+        <argument
+            android:name="params"
+            app:argType="string"
+            android:defaultValue=""/>
+
+        <argument
+            android:name="regId"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
 </navigation>

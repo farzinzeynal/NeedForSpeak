@@ -6,13 +6,18 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.widget.doOnTextChanged
+import androidx.navigation.fragment.findNavController
 import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.databinding.FragmentLoginBinding
 import az.needforspeak.ui.MainActivity
 import az.needforspeak.utils.MaskFormatter
+import az.needforspeak.utils.SharedTypes
+import az.needforspeak.utils.getNavOptions
+import az.needforspeak.utils.helpers.MainSharedPrefs
 import az.needforspeak.view_model.LoginViewModel
 import com.google.gson.Gson
 import org.koin.android.ext.android.inject
@@ -29,6 +34,18 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val uri = requireActivity().intent.data
+
+        if (uri != null) {
+            val parameters: List<String> = uri.getPathSegments()
+            findNavController().navigate(R.id.registrationFragment, null, getNavOptions())
+        }
+
+        val regId = MainSharedPrefs(requireContext(), SharedTypes.USERDATA).get("REG_ID","") ?: ""
+        if(regId.isNotEmpty()){
+            findNavController().navigate(R.id.registrationFragment, bundleOf("reqId" to regId), getNavOptions())
+        }
 
         views.plateInclude.plateEditText.addTextChangedListener(MaskFormatter("99_AA_999", views.plateInclude.plateEditText))
         views.passwordEdittext.doOnTextChanged { text, start, before, count ->
@@ -50,9 +67,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         viewModel.profileResponse.observe(viewLifecycleOwner) {
             BaseActivity.loadingDown()
             it.data?.let {
+                views.btnGoRegister.visibility = View.GONE
                 views.loginLayout.visibility = View.VISIBLE
                 sharedPreferences.edit().putString("profile", Gson().toJson(it)).commit()
+            } ?: run {
+                views.btnGoRegister.visibility = View.VISIBLE
             }
+
         }
 
         viewModel.successLogin.observe(viewLifecycleOwner) {
@@ -67,7 +88,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         views.loginButton.setOnClickListener {
             viewModel.login(requireContext(), views.plateInclude.plateEditText.text.toString(), views.passwordEdittext.text.toString())
+        }
 
+        views.btnGoRegister.setOnClickListener {
+            findNavController().navigate(R.id.registrationFragment, null, getNavOptions())
         }
 
 //        if(views.plateInclude.plateEditText.text.isEmpty()) {

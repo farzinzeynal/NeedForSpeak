@@ -30,8 +30,5 @@ abstract class BaseFragment<VB: ViewBinding>(
         _binding = null
     }
 
-    override fun onPause() {
-        super.onPause()
-        _binding = null
-    }
+
 }

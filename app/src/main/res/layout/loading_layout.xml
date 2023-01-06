@@ -12,6 +12,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/loading_animation"
         android:indeterminateTintMode="src_atop"
         android:indeterminateTint="@color/green_text"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

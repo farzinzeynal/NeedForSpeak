@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.widget.ImageView
 import az.needforspeak.utils.UtilFuntions
 
-class RoundedImageView : ImageView {
+class RoundedImageView : androidx.appcompat.widget.AppCompatImageView {
 
     constructor(context: Context) : super(context)
 

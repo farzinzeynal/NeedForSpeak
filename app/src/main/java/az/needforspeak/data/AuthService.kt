@@ -1,11 +1,14 @@
 package az.needforspeak.data
 
-import az.needforspeak.model.remote.auth.LoginResponseModel
-import az.needforspeak.model.remote.auth.ProfileResponseModel
+import az.needforspeak.model.remote.auth.request.RegistrationRequestModel
+import az.needforspeak.model.remote.auth.response.LoginResponseModel
+import az.needforspeak.model.remote.auth.response.ProfileResponseModel
+import az.needforspeak.model.remote.auth.response.RegStatusModel
+import az.needforspeak.model.remote.auth.response.RegisterResponseModel
 import az.needforspeak.utils.Endpoints
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -16,4 +19,10 @@ interface AuthService {
 
     @GET(Endpoints.GET_PROFILE)
     suspend fun getProfile(@Path("userId") userId: String): Response<ProfileResponseModel>
+
+    @POST(Endpoints.REGISTER_REQUEST)
+    suspend fun sendRegisterRequest(@Body registerRequest: RegistrationRequestModel): Response<RegisterResponseModel>
+
+    @GET(Endpoints.CHECK_REGISTER_STATUS)
+    suspend fun checkRegistrationStatus(@Path("requestId") requestId: String): Response<RegStatusModel>
 }

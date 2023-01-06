@@ -29,6 +29,7 @@
             android:background="@drawable/flag_background"
             android:paddingStart="2dp"
             android:paddingTop="1dp"
+            android:textColor="@color/black"
             android:paddingEnd="2dp"
             android:text="AZ"
             android:textSize="10sp" />

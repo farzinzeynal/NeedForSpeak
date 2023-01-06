@@ -2,8 +2,11 @@ package az.needforspeak.repository
 
 import az.needforspeak.base.BaseApiResponse
 import az.needforspeak.data.AuthService
-import az.needforspeak.model.remote.auth.LoginResponseModel
-import az.needforspeak.model.remote.auth.ProfileResponseModel
+import az.needforspeak.model.remote.auth.response.LoginResponseModel
+import az.needforspeak.model.remote.auth.response.ProfileResponseModel
+import az.needforspeak.model.remote.auth.request.RegistrationRequestModel
+import az.needforspeak.model.remote.auth.response.RegStatusModel
+import az.needforspeak.model.remote.auth.response.RegisterResponseModel
 import az.needforspeak.utils.Constants
 import az.needforspeak.utils.NetworkResult
 import az.needforspeak.utils.XMPPController
@@ -38,4 +41,18 @@ class AuthRepositry(private val service: AuthService): BaseApiResponse() {
             emit(safeApiCall { service.getProfile(userId) })
         }.flowOn(Dispatchers.IO)
     }
+
+    suspend fun sendRegisterRequest(registerRequest: RegistrationRequestModel): Flow<NetworkResult<RegisterResponseModel>> {
+        return flow {
+            emit(safeApiCall { service.sendRegisterRequest(registerRequest) })
+        }.flowOn(Dispatchers.IO)
+    }
+
+    suspend fun checkRegistrationStatus(requestId: String): Flow<NetworkResult<RegStatusModel>> {
+        return flow {
+            emit(safeApiCall { service.checkRegistrationStatus(requestId) })
+        }.flowOn(Dispatchers.IO)
+    }
+
+
 }

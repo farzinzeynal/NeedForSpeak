@@ -26,4 +26,7 @@
     <color name="green_text">#6EBA46</color>
     <color name="button_background_green">#91d8bb</color>
     <color name="divider_color">#ADADA6</color>
+    <color name="chat_icon_color">#ADADA6</color>
+    <color name="hint_color">#B5B5B5</color>
+    <color name="red">#B30000</color>
 </resources>

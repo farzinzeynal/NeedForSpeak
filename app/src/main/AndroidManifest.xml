@@ -25,7 +25,30 @@
             android:name=".ui.unregister.UnregisterActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBar" />
+            android:theme="@style/NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="web.needforspeak.xyz"
+                    android:scheme="https" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="web.needforspeak.xyz"
+                    android:scheme="http" />
+            </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".ui.register.MessagingActivity"
             android:exported="true"
@@ -50,6 +73,12 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar" />
+
+        <activity
+            android:name=".ui.image_retriever.ImageRetrieverActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar" />

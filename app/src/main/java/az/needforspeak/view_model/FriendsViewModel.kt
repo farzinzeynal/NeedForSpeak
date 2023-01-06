@@ -5,11 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import az.needforspeak.base.BaseActivity
-import az.needforspeak.model.remote.auth.ProfileResponseModel
-import az.needforspeak.model.remote.auth.UserSearchResponse
+import az.needforspeak.model.remote.auth.response.UserSearchResponse
 import az.needforspeak.repository.FriendsRepository
-import az.needforspeak.repository.MainRepository
-import az.needforspeak.utils.MyAccount
 import az.needforspeak.utils.NetworkResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

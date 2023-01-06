@@ -16,7 +16,6 @@ import az.needforspeak.base.BaseFragment
 import az.needforspeak.component.adapter.MarketAdapter
 import az.needforspeak.databinding.FragmentAddFriendBinding
 import az.needforspeak.utils.*
-import az.needforspeak.utils.Extentions.showToast
 import az.needforspeak.view_model.FriendsViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
@@ -97,8 +96,8 @@ class AddFriendFragment :
 
         viewModel.userSearchLiveData.observe(viewLifecycleOwner) { user ->
             BaseActivity.loadingDown()
-            if (user.isNotNull()) {
-                views.userFullName.text = user.data?.name?.value + " " + user.data?.surname?.value
+            if (user.isNotNull() && user.data?.name?.value!=null && user.data.surname?.value!=null) {
+                views.userFullName.text = user.data.name.value + " " + user.data.surname.value
                 views.userFullName.visibility = View.VISIBLE
                 views.findUserLayout.visibility = View.GONE
                 views.sendRequestLayout.visibility = View.VISIBLE
@@ -109,7 +108,6 @@ class AddFriendFragment :
                 Toast.makeText(requireContext(), "User not found", Toast.LENGTH_SHORT)
                     .show()
             }
-
         }
     }
 

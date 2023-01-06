@@ -22,7 +22,7 @@
     <string name="surname">Фамилия</string>
     <string name="set_password">Установить пароль</string>
     <string name="confirm_password">Подтвердить пароль</string>
-    <string name="phone_hint">(+994) 00 000-00-00</string>
+    <string name="phone_hint">xx xxx-xx-xx (mob.)</string>
     <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the</string>
     <string name="certificate_reminder">Your request will be send to \n the administrator for approval.\n You will then receive a notification</string>
     <string name="enter_code">Введите код</string>
@@ -36,6 +36,7 @@
     <string name="birth_date">Date of birth</string>
     <string name="family_status">Family status</string>
     <string name="registration_number">registration number</string>
+    <string name="registration">Registration</string>
     <string name="status">Status</string>
     <string name="interests">interests</string>
     <string name="education">Education</string>
@@ -144,5 +145,6 @@
     <string name="illegible_document_warning">The document is not illegible</string>
     <string name="wrong_document_warning">The document is not correct</string>
     <string name="not_visible_content">This content is not visible</string>
+    <string name="registration_certificates">Registration Certificate</string>
 
 </resources>
