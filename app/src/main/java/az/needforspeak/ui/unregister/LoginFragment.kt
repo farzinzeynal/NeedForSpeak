@@ -32,20 +32,30 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         super.onCreate(savedInstanceState)
     }
 
+    var isFromRegister = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val uri = requireActivity().intent.data
+        arguments?.let {
+            isFromRegister = it.getBoolean("isFromRegister")
+        }
 
-        if (uri != null) {
+        var uri = requireActivity().intent.data
+
+        if (uri != null && !isFromRegister) {
             val parameters: List<String> = uri.getPathSegments()
-            findNavController().navigate(R.id.registrationFragment, null, getNavOptions())
+            findNavController().navigate(R.id.registrationFragment,  bundleOf("params" to parameters[0]), getNavOptions())
+            requireActivity().intent.data = null
+        }
+        else{
+            val regId = MainSharedPrefs(requireContext(), SharedTypes.USERDATA).get("REG_ID",0) ?: 0
+            if(regId!=0){
+                findNavController().navigate(R.id.registrationFragment, bundleOf("reqId" to regId), getNavOptions())
+            }
         }
 
-        val regId = MainSharedPrefs(requireContext(), SharedTypes.USERDATA).get("REG_ID","") ?: ""
-        if(regId.isNotEmpty()){
-            findNavController().navigate(R.id.registrationFragment, bundleOf("reqId" to regId), getNavOptions())
-        }
+
 
         views.plateInclude.plateEditText.addTextChangedListener(MaskFormatter("99_AA_999", views.plateInclude.plateEditText))
         views.passwordEdittext.doOnTextChanged { text, start, before, count ->

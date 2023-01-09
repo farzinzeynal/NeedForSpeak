@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_two_color"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo_icon" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/pendingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:text="Your request in under cheking. Please wait for notification"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:id="@+id/otpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/enter_the_sms_code"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/enteredOtpCode"
+                    android:layout_width="250dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/plate_background"
+                    android:hint="@string/enter_code"
+                    android:inputType="number|phone"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="6dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    tools:ignore="TextFields" />
+
+                <Button
+                    android:id="@+id/verifyCode"
+                    android:layout_width="210dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/verify_code"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/getNewCode"
+                    android:layout_width="210dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:alpha="0.5"
+                    android:background="@drawable/button_background_2"
+                    android:text="Get new code"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/successLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/success"
+                    android:textColor="@color/bottom_icon_color"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sucessMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/enter_the_sms_code"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <Button
+                    android:id="@+id/btnContinue"
+                    android:layout_width="210dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/continue_"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -69,10 +69,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:layout_marginHorizontal="20dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-                android:maxLines="1"
-                android:text="info text"
+                android:text="Your request will be sent for approval. Approval message will be received later"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 

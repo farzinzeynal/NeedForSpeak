@@ -10,6 +10,10 @@
         android:name="az.needforspeak.ui.unregister.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+
+    <argument
+        android:name="isFromRegister"
+        app:argType="boolean" />
     <fragment
         android:id="@+id/registrationFragment"
         android:name="az.needforspeak.ui.unregister.RegistrationFragment"
@@ -21,7 +25,22 @@
 
         <argument
             android:name="regId"
-            app:argType="string"
-            android:defaultValue=""/>
+            app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/addUserDataFragment"
+        android:name="az.needforspeak.ui.unregister.AddUserDataFragment"
+        android:label="AddUserDataFragment" />
+    <fragment
+        android:id="@+id/checkRegisterFragment"
+        android:name="az.needforspeak.ui.unregister.CheckRegisterFragment"
+        android:label="CheckRegisterFragment" />
+
+    <argument
+        android:name="isSuccess"
+        app:argType="boolean" />
+
+    <argument
+        android:name="isFromDeepLink"
+        app:argType="boolean"/>
 </navigation>

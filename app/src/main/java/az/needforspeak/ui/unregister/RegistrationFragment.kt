@@ -13,6 +13,8 @@ import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
@@ -21,10 +23,7 @@ import az.needforspeak.model.local.Image
 import az.needforspeak.model.local.NFSFile
 import az.needforspeak.model.remote.auth.request.RegistrationRequestModel
 import az.needforspeak.ui.image_retriever.ImageRetrieverActivity
-import az.needforspeak.utils.MaskFormatter
-import az.needforspeak.utils.RandomStringGenerator
-import az.needforspeak.utils.SharedTypes
-import az.needforspeak.utils.UtilFuntions
+import az.needforspeak.utils.*
 import az.needforspeak.utils.helpers.MainSharedPrefs
 import az.needforspeak.utils.image.ImageHelper
 import az.needforspeak.utils.type_defs.FileExtensionTypes
@@ -38,7 +37,7 @@ class RegistrationFragment :
     View.OnClickListener,
     TextWatcher {
 
-    private var redId = ""
+    private var redId = 0
     private var params = ""
     private val viewModel: LoginViewModel by viewModel()
 
@@ -69,28 +68,26 @@ class RegistrationFragment :
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initRegisterApi()
-        initCheckApi()
+
 
 
         arguments?.let {
-            redId = it.getString("reqId") ?: ""
+            redId = it.getInt("reqId") ?: 0
             params = it.getString("params") ?: ""
 
-            if (redId.isNotEmpty()){
+            if (params.isNotEmpty()){
                 views.firstStepLayout.visibility = View.GONE
-                checkReqStatus(redId)
+                findNavController().navigate(R.id.checkRegisterFragment, bundleOf("isFromDeepLink" to true), getNavOptions())
+            }
+
+            if (redId!=0){
+                views.firstStepLayout.visibility = View.GONE
+                findNavController().navigate(R.id.checkRegisterFragment, bundleOf("reqId" to redId), getNavOptions())
             }
         }
 
     }
 
-    private fun initCheckApi() {
-
-    }
-
-    private fun checkReqStatus(redId: String) {
-        viewModel.checkRegistrationStatus(redId)
-    }
 
     private fun checkInputs() {
         if (views.plateInclude.plateEditText.text.toString().length >= 9 &&
@@ -212,6 +209,7 @@ class RegistrationFragment :
         viewModel.registerResponse.observe(viewLifecycleOwner){
             if (it.data!=null){
                 MainSharedPrefs(requireContext(),SharedTypes.USERDATA).set("REG_ID",it.data.request_id)
+                findNavController().navigate(R.id.checkRegisterFragment,null, getNavOptions())
             }
         }
     }

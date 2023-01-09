@@ -1,12 +1,12 @@
 package az.needforspeak.view_model
 
 import android.content.Context
-import android.content.SyncRequest
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import az.needforspeak.base.BaseActivity
+import az.needforspeak.model.remote.auth.request.RegisteNewUserModel
 import az.needforspeak.model.remote.auth.response.ProfileResponseModel
 import az.needforspeak.model.remote.auth.request.RegistrationRequestModel
 import az.needforspeak.model.remote.auth.response.RegStatusModel
@@ -28,6 +28,12 @@ class LoginViewModel(private val authRepositry: AuthRepositry): ViewModel() {
 
     private val _regStatusResponse: MutableLiveData<NetworkResult<RegStatusModel>> = MutableLiveData()
     val regStatusResponse: LiveData<NetworkResult<RegStatusModel>> = _regStatusResponse
+
+    private val _verifyOtpResponse: MutableLiveData<NetworkResult<RegisterResponseModel>> = MutableLiveData()
+    val verifyOtpResponse: LiveData<NetworkResult<RegisterResponseModel>> = _verifyOtpResponse
+
+    private val _registerNewUserResponse: MutableLiveData<NetworkResult<String>> = MutableLiveData()
+    val registerNewUserResponse: LiveData<NetworkResult<String>> = _registerNewUserResponse
 
     val showError = MutableLiveData<Boolean>()
     val successLogin = MutableLiveData<Boolean>()
@@ -64,10 +70,33 @@ class LoginViewModel(private val authRepositry: AuthRepositry): ViewModel() {
         }
     }
 
-    fun checkRegistrationStatus(requestId: String)= viewModelScope.launch  {
+    fun checkRegistrationStatus(requestId: Int)= viewModelScope.launch  {
         BaseActivity.loadingUp()
         authRepositry.checkRegistrationStatus(requestId).collect { values ->
             _regStatusResponse.value = values
+            BaseActivity.loadingDown()
+        }
+    }
+
+    fun sendOtpRequest(regId: Int) = viewModelScope.launch {
+        BaseActivity.loadingUp()
+        authRepositry.sendOtp(regId).collect { values ->
+            BaseActivity.loadingDown()
+        }
+    }
+
+    fun verifyCode(regId: Int, otpCode: String) = viewModelScope.launch {
+        BaseActivity.loadingUp()
+        authRepositry.verifyOtp(regId,otpCode).collect { values ->
+            _verifyOtpResponse.value = values
+            BaseActivity.loadingDown()
+        }
+    }
+
+    fun registerNewUser(regId: Int,name: String, sureName: String, password: String) = viewModelScope.launch {
+        BaseActivity.loadingUp()
+        authRepositry.registerNewUser(RegisteNewUserModel(regId,name,sureName,password)).collect { values ->
+            _registerNewUserResponse.value = values
             BaseActivity.loadingDown()
         }
     }
