@@ -35,6 +35,7 @@ import az.needforspeak.model.local.MESSAGE_SENDER
 import az.needforspeak.model.local.MESSAGE_TYPE
 import az.needforspeak.model.local.Message
 import az.needforspeak.model.local.MessageModel
+import az.needforspeak.utils.UtilFuntions
 import az.needforspeak.view_model.MessagingViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.*
@@ -369,29 +370,12 @@ class MessagingActivity : BaseActivity<ActivityMessagingBinding>(),
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val photo = result.data?.getExtras()?.get("data") as Bitmap
-                val uri = bitmapToFile(photo)
+                val uri = UtilFuntions.bitmapToFile(applicationContext,photo)
                 list.add(MessageModel(message = null, date = "05:22", type = MESSAGE_TYPE.PHOTO, img = uri.toString(), voice = null, MESSAGE_SENDER.FROM))
                 views.messageRecyclerView.adapter?.notifyItemInserted(list.size - 1)
                 views.messageRecyclerView.scrollToPosition(list.size - 1)
             }
         }
-
-    private fun bitmapToFile(bitmap:Bitmap): Uri {
-        val wrapper = ContextWrapper(applicationContext)
-        var file = wrapper.getDir("Images",Context.MODE_PRIVATE)
-        file = File(file,"${UUID.randomUUID()}.jpg")
-
-        try{
-            val stream: OutputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream)
-            stream.flush()
-            stream.close()
-        }catch (e:IOException){
-            e.printStackTrace()
-        }
-
-        return Uri.parse(file.absolutePath)
-    }
 
     private fun setListener() {
         audioRecordView.emojiView!!.setOnClickListener {

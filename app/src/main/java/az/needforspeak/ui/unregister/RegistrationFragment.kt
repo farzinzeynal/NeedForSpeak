@@ -37,6 +37,7 @@ class RegistrationFragment :
     View.OnClickListener,
     TextWatcher {
 
+    private var plateNumber = ""
     private var redId = 0
     private var params = ""
     private val viewModel: LoginViewModel by viewModel()
@@ -74,6 +75,8 @@ class RegistrationFragment :
         arguments?.let {
             redId = it.getInt("reqId") ?: 0
             params = it.getString("params") ?: ""
+            plateNumber = it.getString("plateNumber") ?: ""
+            views.plateInclude.plateEditText.setText(plateNumber)
 
             if (params.isNotEmpty()){
                 views.firstStepLayout.visibility = View.GONE

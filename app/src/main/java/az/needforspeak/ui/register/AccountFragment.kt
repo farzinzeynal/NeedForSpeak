@@ -1,14 +1,26 @@
 package az.needforspeak.ui.register
 
+import android.Manifest
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import az.needforspeak.R
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
+import az.needforspeak.component.PhotoSelectBottomSheet
 import az.needforspeak.databinding.FragmentAccountBinding
+import az.needforspeak.model.local.Image
 import az.needforspeak.model.remote.auth.response.ProfileResponseModel
+import az.needforspeak.ui.image_retriever.ImageRetrieverActivity
+import az.needforspeak.ui.unregister.UnregisterActivity
 import az.needforspeak.utils.AuthUtils
 import az.needforspeak.utils.SessionManager
+import az.needforspeak.utils.UtilFuntions
 import az.needforspeak.view_model.AccountViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
@@ -24,6 +36,14 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     private val viewModel: AccountViewModel by viewModel()
     var userId = SessionManager.getCurrentUserId()
 
+    private val pickImagePermissions = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.CAMERA,
+    )
+
+    private var mSelectedImages: ArrayList<Image>? = null
+
     //visibilities
     private var nameVisibility = false
     private var surenameVisibility = false
@@ -32,6 +52,18 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     private var careerVisibility = false
     private var educationVisibility = false
     private var interestesVisibility = false
+
+
+    private val getPicturesResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { d ->
+            if (d.resultCode == Activity.RESULT_OK) {
+                mSelectedImages = d.data?.extras?.getParcelableArrayList<Image>(
+                    ImageRetrieverActivity.IMAGES
+                )
+                Log.i("mSelectedImages",mSelectedImages?.size.toString() +" "+ (mSelectedImages?.get(0)?.imageUrl ?: ""))
+            }
+        }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,16 +81,14 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
             viewModel.getUserProfileData(friendUserId)
             setInputsEnabled(false)
             views.plateLayout.plateNum.text = friendUserId
-            downLoadUserProfileImage(friendUserId)
         } ?: run {
             viewModel.getUserProfileData(userId)
             setInputsEnabled(true)
-            downLoadUserProfileImage(userId)
             views.plateLayout.plateNum.text = userId
         }
     }
 
-    private fun downLoadUserProfileImage(userId: String) {
+    private fun downLoadUserProfileImageByUserID(userId: String) {
         val url = "https://api.needforspeak.xyz/profile/$userId/profile-picture"
         val auth: LazyHeaders = LazyHeaders.Builder() // can be cached in a field and reused
             .addHeader("Authorization", AuthUtils.token)
@@ -66,6 +96,19 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
 
         Glide.with(this).load(GlideUrl(url,auth)).into(views.userImage)
     }
+
+    private fun downLoadUserProfileImageByDocumentID(docId: String) {
+        val url = "https://api.needforspeak.xyz/document/$docId"
+        val auth: LazyHeaders = LazyHeaders.Builder() // can be cached in a field and reused
+            .addHeader("Authorization", AuthUtils.token)
+            .build()
+
+        Glide.with(this).load(GlideUrl(url,auth)).into(views.userImage)
+    }
+
+
+
+
 
 
     private fun initViews() {
@@ -84,6 +127,8 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         views.toogleCareer.setOnClickListener(this)
         views.toogleEducation.setOnClickListener(this)
         views.toogleInterestes.setOnClickListener(this)
+        views.userImage.setOnClickListener(this)
+        views.addProfileImage.setOnClickListener(this)
     }
 
     private fun initProfileApi() {
@@ -126,6 +171,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         data.career?.let { setAccountData(views.inputCareer, data.career.value, data.career.visible) }
         data.education?.let { setAccountData(views.inputEducation, data.education.value, data.education.visible) }
         data.interests?.let { setAccountData(views.inputInterestes, data.interests.value, data.interests.visible) }
+        data.profile_pictures?.let { downLoadUserProfileImageByDocumentID(data.profile_pictures[0]) }
     }
 
     private fun updateProfileData(viewId: Int, key: String, value: String, isVisible: Boolean) {
@@ -156,7 +202,12 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
 
     private fun setAccountData(view: TextInputEditText, text: String, isVisible: Boolean) {
         view.setText(text)
-        view.visibility = if (isVisible) View.VISIBLE else View.INVISIBLE
+        if (isVisible){
+            view.visibility = View.VISIBLE
+        }
+        else{
+            view.visibility = if (friendUserId.isEmpty()) View.VISIBLE else View.INVISIBLE
+        }
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
@@ -168,8 +219,28 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     }
 
 
-    private fun showUserImage() {
+    private fun showImagePickDialog() {
 
+        val bsheet = PhotoSelectBottomSheet()
+        bsheet.show(requireActivity().supportFragmentManager, PhotoSelectBottomSheet.TAG)
+
+        Handler().post {
+            bsheet.views.takeCamera.setOnClickListener {
+                bsheet.dismiss()
+                val intent = Intent(requireContext(), ImageRetrieverActivity::class.java)
+                intent.putExtra(ImageRetrieverActivity.IMAGE_RETRIEVER_TYPE, ImageRetrieverActivity.CAMERA)
+                intent.putExtra(ImageRetrieverActivity.IS_MESSAGE_AVAiLABLE, false)
+                getPicturesResult.launch(intent)
+
+            }
+            bsheet.views.takeGallery.setOnClickListener {
+                bsheet.dismiss()
+                val intent = Intent(requireContext(), ImageRetrieverActivity::class.java)
+                intent.putExtra(ImageRetrieverActivity.IMAGE_RETRIEVER_TYPE, ImageRetrieverActivity.GALLERY)
+                intent.putExtra(ImageRetrieverActivity.IS_MESSAGE_AVAiLABLE, false)
+                getPicturesResult.launch(intent)
+            }
+        }
     }
 
 
@@ -201,6 +272,30 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     }
 
 
+    var galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { imageUri ->
+        if (imageUri != null) {
+            views.userImage.setImageURI(imageUri)
+        }
+    }
+    var cameraLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val photo = result.data?.getExtras()?.get("data") as Bitmap
+                val uri = UtilFuntions.bitmapToFile(requireActivity().applicationContext,photo)
+                views.userImage.setImageURI(uri)
+            }
+        }
+
+    private var pickImagePermissionResult =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
+            if (result?.all { it.value == true } == true) {
+               ///val intent = Intent(requireActivity(), ImageRetrieverActivity::class.java)
+               ///intent.putExtra(ImageRetrieverActivity.IMAGE_RETRIEVER_TYPE, ImageRetrieverActivity.GALLERY)
+               ///intent.putExtra(ImageRetrieverActivity.IS_MESSAGE_AVAiLABLE, false)
+               ///getPicturesResult.launch(intent)
+                showImagePickDialog()
+            }
+        }
 
 
     override fun onClick(view: View?) {
@@ -215,7 +310,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     nameVisibility=true
                 }
                 viewModel.updateProfileData(userId, "name", views.inputName.text.toString(),nameVisibility)
-                views.inputName.visibility = if (nameVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.toogleSurename ->{
@@ -228,7 +322,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     surenameVisibility=true
                 }
                 viewModel.updateProfileData(userId, "surname", views.inputSurename.text.toString(),surenameVisibility)
-                views.inputSurename.visibility = if (surenameVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.tooglePhoneNumber ->{
@@ -241,7 +334,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     phoneNumberVisibility=true
                 }
                 viewModel.updateProfileData(userId, "phone-number", views.inputPhoneNumber.text.toString(),phoneNumberVisibility)
-                views.inputPhoneNumber.visibility = if (phoneNumberVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.toogleStatus ->{
@@ -254,7 +346,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     statusVisibility=true
                 }
                 viewModel.updateProfileData(userId, "about", views.inputStatus.text.toString(),statusVisibility)
-                views.inputStatus.visibility = if (statusVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.toogleCareer ->{
@@ -267,7 +358,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     careerVisibility=true
                 }
                 viewModel.updateProfileData(userId, "career", views.inputCareer.text.toString(),careerVisibility)
-                views.inputCareer.visibility = if (careerVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.toogleEducation ->{
@@ -280,7 +370,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     educationVisibility=true
                 }
                 viewModel.updateProfileData(userId, "education", views.inputEducation.text.toString(),educationVisibility)
-                views.inputEducation.visibility = if (educationVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.toogleInterestes ->{
@@ -293,11 +382,14 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
                     interestesVisibility=true
                 }
                 viewModel.updateProfileData(userId, "interests", views.inputInterestes.text.toString(),interestesVisibility)
-                views.inputInterestes.visibility = if (interestesVisibility) View.VISIBLE else View.INVISIBLE
             }
 
             R.id.userImage ->{
-                showUserImage()
+                pickImagePermissionResult.launch(pickImagePermissions)
+            }
+
+            R.id.addProfileImage ->{
+               views.userImage.performClick()
             }
         }
 

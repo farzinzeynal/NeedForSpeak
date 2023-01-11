@@ -101,7 +101,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         }
 
         views.btnGoRegister.setOnClickListener {
-            findNavController().navigate(R.id.registrationFragment, null, getNavOptions())
+            findNavController().navigate(R.id.registrationFragment, bundleOf("plateNumber" to views.plateInclude.plateEditText.text.toString()), getNavOptions())
         }
 
 //        if(views.plateInclude.plateEditText.text.isEmpty()) {

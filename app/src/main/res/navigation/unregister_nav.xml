@@ -24,6 +24,11 @@
             android:defaultValue=""/>
 
         <argument
+            android:name="plateNumber"
+            app:argType="string"
+            android:defaultValue=""/>
+
+        <argument
             android:name="regId"
             app:argType="integer" />
     </fragment>
