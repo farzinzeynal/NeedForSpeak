@@ -23,7 +23,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-    private var subCatId: String =""
+    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
+    /*private var subCatId: String =""
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
     val sharedPreferences by inject<SharedPreferences> { parametersOf("secure") }
     private val mainViewModel: MainViewModel by viewModel()
@@ -194,9 +195,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             Navigation.findNavController(listFragment[3].views.containerContent).navigate(R.id.userSettingsFragment, null, getNavOptions())
         }
 
-       /* Handler(Looper.getMainLooper()).post {
+       *//* Handler(Looper.getMainLooper()).post {
             views.bottomNav.selectedItemId = R.id.chatsNav
-        }*/
+        }*//*
     }
 
 
@@ -394,5 +395,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
 
         statusbarColor()
-    }
+    }*/
 }

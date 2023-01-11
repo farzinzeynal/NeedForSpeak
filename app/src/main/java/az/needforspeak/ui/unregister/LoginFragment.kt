@@ -14,6 +14,7 @@ import az.needforspeak.base.BaseActivity
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.databinding.FragmentLoginBinding
 import az.needforspeak.ui.MainActivity
+import az.needforspeak.ui.register.HomeActivity
 import az.needforspeak.utils.MaskFormatter
 import az.needforspeak.utils.SharedTypes
 import az.needforspeak.utils.getNavOptions
@@ -44,7 +45,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         var uri = requireActivity().intent.data
 
         if (uri != null && !isFromRegister) {
-            val parameters: List<String> = uri.getPathSegments()
+            val parameters: List<String> = uri.pathSegments
             findNavController().navigate(R.id.registrationFragment,  bundleOf("params" to parameters[0]), getNavOptions())
             requireActivity().intent.data = null
         }
@@ -91,7 +92,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 sharedPreferences.edit().putBoolean("isLogin", true).commit()
                 sharedPreferences.edit().putString("username", views.plateInclude.plateEditText.text.toString()).commit()
                 sharedPreferences.edit().putString("password", views.passwordEdittext.text.toString()).commit()
-                requireActivity().startActivity(Intent(requireActivity(), MainActivity::class.java))
+                requireActivity().startActivity(Intent(requireActivity(), HomeActivity::class.java))
                 requireActivity().finish()
             }
         }

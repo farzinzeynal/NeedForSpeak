@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_two_color"
-    tools:context=".ui.register.ChatsFragment">
+    tools:context=".ui.register.chats.ChatsFragment">
     <az.needforspeak.component.SearchInput
         android:id="@+id/search_input"
         android:layout_width="match_parent"

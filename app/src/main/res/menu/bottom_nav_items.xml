@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/friendsNav"
+    <item android:id="@+id/friendsFragment"
         android:title=""
         android:icon="@drawable/ic_friends"/>
-    <item android:id="@+id/chatsNav"
+    <item android:id="@+id/chatsFragment"
         android:title=""
         android:icon="@drawable/ic_chats"/>
-    <item android:id="@+id/marketNav"
+    <item android:id="@+id/marketFragment"
         android:title=""
         android:icon="@drawable/ic_market"/>
-    <item android:id="@+id/accountNav"
+    <item android:id="@+id/accountFragment"
         android:title=""
         android:icon="@drawable/ic_settings"/>
 </menu>

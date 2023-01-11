@@ -1,23 +1,16 @@
-package az.needforspeak.ui.register
+package az.needforspeak.ui.register.market
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import az.needforspeak.R
 import az.needforspeak.base.BaseFragment
 import az.needforspeak.component.adapter.MarketAdapter
-import az.needforspeak.component.adapter.UserAdapter
 import az.needforspeak.databinding.FragmentMarketBinding
 import az.needforspeak.model.local.MarketModel
-import az.needforspeak.ui.MainActivity
 import az.needforspeak.utils.getNavOptions
 
 

@@ -4,7 +4,6 @@ import android.content.Context
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Handler
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +18,6 @@ import az.needforspeak.model.local.MESSAGE_SENDER
 import az.needforspeak.model.local.MESSAGE_TYPE
 import az.needforspeak.model.local.MessageModel
 import az.needforspeak.model.local.PLAY_STATE
-import az.needforspeak.ui.register.MessagingActivity
 import az.needforspeak.utils.getDpToPixel
 import coil.load
 import coil.size.Scale

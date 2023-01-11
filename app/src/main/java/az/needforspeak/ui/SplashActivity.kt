@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.webkit.WebView
 import az.needforspeak.base.BaseActivity
 import az.needforspeak.databinding.ActivitySplashBinding
+import az.needforspeak.ui.register.HomeActivity
 import az.needforspeak.ui.unregister.UnregisterActivity
 import az.needforspeak.view_model.SplashViewModel
 import org.koin.android.ext.android.inject
@@ -32,7 +33,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
         viewModel.successConnect.observe(this) {
             if(it) {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, HomeActivity::class.java))
                 finish()
             }
         }

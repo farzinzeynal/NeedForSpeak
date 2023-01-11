@@ -1,4 +1,4 @@
-package az.needforspeak.ui.register
+package az.needforspeak.ui.register.chats
 
 import android.R
 import android.annotation.SuppressLint
@@ -8,8 +8,6 @@ import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.os.Parcelable
 import android.provider.MediaStore
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts

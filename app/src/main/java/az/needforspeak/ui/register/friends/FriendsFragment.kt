@@ -1,7 +1,6 @@
-package az.needforspeak.ui.register
+package az.needforspeak.ui.register.friends
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController

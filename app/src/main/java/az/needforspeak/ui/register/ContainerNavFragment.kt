@@ -27,7 +27,7 @@ class ContainerNavFragment : BaseFragment<FragmentContainerNavBinding>(FragmentC
     override fun onStart() {
         super.onStart()
 
-        val navController = views.containerContent.findNavController()
+        /*       val navController = views.containerContent.findNavController()
         val navGraph = navController.navInflater.inflate(R.navigation.main_nav)
         val navId =requireArguments().getInt("navId")
         if(navId != null) {
@@ -47,5 +47,6 @@ class ContainerNavFragment : BaseFragment<FragmentContainerNavBinding>(FragmentC
             return fragment
 
         }
+    }*/
     }
 }

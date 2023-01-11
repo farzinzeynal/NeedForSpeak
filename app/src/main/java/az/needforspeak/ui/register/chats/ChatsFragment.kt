@@ -1,6 +1,5 @@
-package az.needforspeak.ui.register
+package az.needforspeak.ui.register.chats
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
@@ -13,9 +12,7 @@ import az.needforspeak.component.adapter.ChatAdapter
 import az.needforspeak.databinding.FragmentChatsBinding
 import az.needforspeak.model.local.ChatModel
 import az.needforspeak.view_model.ChatsViewModel
-import az.needforspeak.utils.getCurrentDateTime
 import az.needforspeak.utils.getNavOptions
-import az.needforspeak.utils.toString
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

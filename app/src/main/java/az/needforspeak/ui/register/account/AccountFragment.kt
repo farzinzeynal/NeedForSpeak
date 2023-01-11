@@ -1,4 +1,4 @@
-package az.needforspeak.ui.register
+package az.needforspeak.ui.register.account
 
 import android.Manifest
 import android.app.Activity
@@ -17,7 +17,6 @@ import az.needforspeak.databinding.FragmentAccountBinding
 import az.needforspeak.model.local.Image
 import az.needforspeak.model.remote.auth.response.ProfileResponseModel
 import az.needforspeak.ui.image_retriever.ImageRetrieverActivity
-import az.needforspeak.ui.unregister.UnregisterActivity
 import az.needforspeak.utils.AuthUtils
 import az.needforspeak.utils.SessionManager
 import az.needforspeak.utils.UtilFuntions

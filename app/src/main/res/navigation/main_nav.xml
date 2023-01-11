@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/friendsFragment"
-        android:name="az.needforspeak.ui.register.FriendsFragment"
+        android:name="az.needforspeak.ui.register.friends.FriendsFragment"
         android:label="@string/friends"
         tools:layout="@layout/fragment_friends">
         <argument
@@ -18,12 +18,12 @@
 
     <fragment
         android:id="@+id/chatsFragment"
-        android:name="az.needforspeak.ui.register.ChatsFragment"
+        android:name="az.needforspeak.ui.register.chats.ChatsFragment"
         android:label="@string/chats"
         tools:layout="@layout/fragment_chats" />
     <fragment
         android:id="@+id/marketFragment"
-        android:name="az.needforspeak.ui.register.MarketFragment"
+        android:name="az.needforspeak.ui.register.market.MarketFragment"
         android:label="@string/market"
         tools:layout="@layout/fragment_market" >
         <argument
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="az.needforspeak.ui.register.AccountFragment"
+        android:name="az.needforspeak.ui.register.account.AccountFragment"
         android:label="@string/account"
         tools:layout="@layout/fragment_account">
     </fragment>
@@ -41,12 +41,12 @@
 
     <fragment
         android:id="@+id/addFriendFragment"
-        android:name="az.needforspeak.ui.register.AddFriendFragment"
+        android:name="az.needforspeak.ui.register.friends.AddFriendFragment"
         android:label="Add friend"
         tools:layout="@layout/fragment_add_friend" />
     <activity
         android:id="@+id/messagingActivity"
-        android:name="az.needforspeak.ui.register.MessagingActivity"
+        android:name="az.needforspeak.ui.register.chats.MessagingActivity"
         android:label="Messaging"
         tools:layout="@layout/fragment_messaging" >
         <argument
@@ -56,7 +56,7 @@
     </activity>
     <fragment
         android:id="@+id/marketFragmentIn"
-        android:name="az.needforspeak.ui.register.MarketFragment"
+        android:name="az.needforspeak.ui.register.market.MarketFragment"
         android:label="{title}"
         tools:layout="@layout/fragment_market" >
         <argument

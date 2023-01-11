@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".ui.register.MessagingFragment">
+    tools:context=".ui.register.chats.MessagingFragment">
     <LinearLayout
         android:id="@+id/toolbarLayout"
         app:layout_constraintTop_toTopOf="parent"
